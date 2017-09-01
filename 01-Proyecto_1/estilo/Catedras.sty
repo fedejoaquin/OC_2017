@@ -1,0 +1,110 @@
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0pt}
+
+\setlength{\textwidth}{170mm}
+\setlength{\oddsidemargin}{-5.4mm}
+\setlength{\evensidemargin}{-5.4mm}
+\setlength{\textheight}{247mm}
+\setlength{\topmargin}{-15.4mm}
+\setlength{\headheight}{11mm}
+\setlength{\headsep}{2mm}
+
+% CARPETA CON IMAGENES DE ENCABEZADO
+\graphicspath{{estilo/}}
+
+% DEFINICIÓN DE COMANDOS
+
+\newcommand{\setyear}[1]{\year=#1}
+\newcommand{\universidad}{Universidad Nacional del Sur}
+\newcommand{\departamento}{Departamento de Ciencias e Ingeniería de la Computación}
+\newcommand{\materia}{Organización de computadoras}
+\newcommand{\cuatrimestre}{Segundo}
+
+\newcommand{\RISC}{\textsc{risc}}
+\newcommand{\CISC}{\textsc{cisc}}
+\newcommand{\OCUNS}{\textsc{ocuns}}
+\newcommand{\PC}{\textsf{PC}}
+\newcommand{\SP}{\textsf{SP}}
+
+% ENCABEZADO GENERAL
+% DeptoLogo - Departamento - Universidad - Cuatrimestre - Año - UniLogo
+\newcommand{\header}{
+	\begin{center}
+		\begin{tabular}{lcl}
+		\multirow{4}{*}
+		{\smash{$\vcenter{\hbox{\includegraphics[width=.78in]{DeptoLogo}}}$}} & {\Large\textsc{\materia}} &  
+		\multirow{4}{*}
+		{\smash{$\vcenter{\hbox{\includegraphics[width=.88in]{UniLogo}}}$}} \\
+		         & \departamento & \\
+		         & \universidad & \\
+		         & \textbf{\cuatrimestre\ Cuatrimestre de \number\year} & \\
+		\end{tabular}\\[2em]
+	\end{center}
+}
+
+% ENCABEZADO EDITABLE%
+% Uso: \Titulo{Primer texto negrita}{Segundo texto normal}
+% header + Texto 1 + Texto 2
+\newcommand{\Titulo}[2]{ 
+	\begin{center}
+		\header
+		 \textbf{#1} \\ #2 \\[4pt]
+	\end{center}
+}
+
+% ENCABEZADO PRÁCTICOS CON NUMEROS
+% Uso: \TPnumero{Número de Práctico}{Título de Práctico}
+% header + Trabajo Práctico Nº X + Titulo de Práctico
+\newcommand{\TPnumero}[2]{ 
+	\begin{center}
+		\header
+        Trabajo Práctico N$^{\circ}$ #1 \\ \textbf{#2} \\[4pt]
+    \end{center}
+}
+
+% ENCABEZADO PRÁCTICOS CON LETRAS
+% Uso: \TPletra{Letra de Práctico}{Título de Práctico}
+% header + Trabajo Práctico 'X' + Titulo de Práctico
+\newcommand{\TPletra}[2]{ 
+	\begin{center}
+		\header
+		Trabajo Práctico #1 \\ \textbf{#2} \\[4pt]
+	\end{center}
+}
+
+% ENCABEZADO PRÁCTICOS PROGRAMACIÓN CON NUMEROS
+% Uso: \TPPnumero{Número de Práctico}{Título de Práctico}
+% header + Trabajo Práctico de Programación Nº X + Titulo de Práctico
+\newcommand{\TPPnumero}[2]{ 
+	\begin{center}
+		\header
+		Trabajo Práctico de Programación N$^{\circ}$ #1 \\ \textbf{#2} \\[4pt]
+	\end{center}
+}
+
+% ENCABEZADO PRÁCTICOS PROGRAMACIÓN CON LETRAS
+% Uso: \TPPletra{Letra de Práctico}{Título de Práctico}
+% header + Trabajo Práctico de Programación 'X' + Titulo de Práctico
+\newcommand{\TPPletra}[2]{ 
+	\begin{center}
+		\header
+		Trabajo Práctico de Programación #1 \\ \textbf{#2} \\[4pt]
+	\end{center}
+}
+
+% ENCABEZADO PROYECTO CON NÚMERO
+% Uso: \PRnumero{Número de Proyecto}{Título de Proyecto}
+% header + Proyecto Nº X + Titulo de Proyecto
+\newcommand{\PRnumero}[2]{
+	\begin{center}
+		\header
+		Proyecto N$^{\circ}$ #1 \\ \textbf{#2} \\[4pt]
+	\end{center}
+}

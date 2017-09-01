@@ -1,0 +1,220 @@
+% ORGANIZACIÓN DE COMPUTADORAS
+% SEGUNDO CUATRIMESTRE 2017
+% PROYECTO 1 - PROGRAMACIÓN EN C
+
+\documentclass[12pt,a4paper]{article}
+\input{estilo/Catedras.sty}
+
+\begin{document}
+
+\PRnumero{1}{Programación en lenguaje C}
+
+\section*{Propósito}
+El objetivo principal del proyecto, es implementar en lenguaje C un programa que registre la frecuencia de aparición de palabras que forman parte de un archivo de texto. 
+
+Con este objetivo, se debe implementar:
+\begin{itemize}
+	
+	\item El TDA Lista Ordenada, que almacene elementos de tipo genérico, y ordene los mismos a través de un comparador diseñado para tales elementos.
+	
+	\item El TDA Trie, que almacena cadena de caracteres y un contador asociado a cada cadena, y que permite recuperar fácilmente tanto palabras como su correspondiente contador.
+	
+	\item Un programa principal, al que al especificarle un archivo de texto, recorra el mismo, calcule la frecuencia de aparición de las palabras que lo componen y ofrezca un conjunto de operaciones de consulta y manipulación del trie.
+	
+\end{itemize}
+
+\section{TDA Lista Ordenada}
+Implementar un TDA Lista Ordenada en lenguaje C, cuyos elementos sean punteros genéricos. El orden de los elementos en la lista se especifica al momento de la creación, a través de una función de comparación. La lista debe ser simplemente enlazada sin centinelas. La implementación debe proveer las operaciones:
+
+\begin{enumerate}
+	
+	%  \item \texttt{lista\_t lista\_crear()} Crea una lista vacía y la retorna.
+	\item \texttt{lista\_t  crearLista(int (*f)(void*,void*))} Crea una lista vacía y la devuelve. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	
+	\item \texttt{int lista\_insertar(lista\_t lista,  void *elem)}
+	Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada.
+	Si procede exitosamente retorna verdadero. En otro caso retorna falso.
+	
+	\item \texttt{int lista\_eliminar(lista\_t lista, unsigned int pos)} Elimina
+	el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente
+	al eliminar en posiciones intermedias. Retorna verdadero si procede con
+	éxito, falso en caso contrario. Si la posición no es válida, aborta con
+	\emph{exit status} \texttt{LST\_POS\_INV}.
+	
+	\item \texttt{int lista\_cantidad(lista\_t lista)} Retorna la cantidad de
+	elementos de la lista. Si la lista no está inicializada, el programa aborta
+	con \emph{exit status} \texttt{LST\_NO\_INI}.
+	
+	\item \texttt{void* lista\_obtener(lista\_t lista, unsigned int pos)} Retorna
+	un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es
+	válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	
+	\item \texttt{void* lista\_buscar(lista\_t lista,void *elem)} Busca el elemento elem 
+	en la lista. Si lo encuentra, retorna un puntero al elemento. Caso contrario 
+	retorna \texttt{NULL}.
+	
+	%  \item \texttt{int lista\_adjuntar(lista\_t lista, int elem)} Inserta el
+	%    elemento \texttt{elem} en la última posición de la lista. Si la lista no
+	%    está inicializada, aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
+	
+	\item \texttt{int lista\_destruir(lista\_t* lista)} Libera la memoria ocupada
+	por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito.
+	Si la lista no está inicializada, aborta con \emph{exit status}
+	\texttt{LST\_NO\_INI}.
+	
+\end{enumerate}
+
+Para la implementación, se debe considerar que los tipos \texttt{lista\_t} y \texttt{celda\_t} están definidos de la siguiente manera:
+
+\begin{verbatim}
+typedef struct lista_ordenada {
+  unsigned int cantidad_elementos;
+  celda_t* primera_celda;
+} *lista_t;
+
+typedef struct celda {
+  void *elemento;
+  celda_t *proxima_celda;
+} celda_t;
+\end{verbatim}
+
+\section{TDA Trie}
+
+Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{caracter} (\texttt{char}), y almacenan adicionalmente un contador de tipo \emph{entero} (\texttt{int}). El trie debe implementarse manteniendo referencia a un nodo raíz, y considerando cada nodo del árbol como una estructura que mantiene referencia al padre y una lista ordenada de nodos como hijos. La implementación debe proveer las operaciones:
+
+\begin{enumerate}
+	
+	\item \texttt{trie\_t trie\_crear()} Retorna un nuevo trie vacío, esto es, con nodo raíz con rótulo nulo y contador en cero.
+	
+	\item \texttt{int insertar(trie\_t tr, char* str)} Inserta el string \texttt{str} en el trie \texttt{tr}, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción (o actualización) fue exitosa, falso en caso contrario.
+
+	\item \texttt{int pertenece(trie\_t tr, char* str)} Retorna verdadero si el string \texttt{srt} pertenece al trie \texttt{tr}, falso en caso contrario.
+	
+	\item \texttt{int recuperar(trie\_t tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie \texttt{tr}. Si el string no pertenece al trie, retorna STR\_NO\_PER.
+
+	\item \texttt{int size(trie\_t tr)} Retona la cantidad de palabras almacenadas en el trie \texttt{tr}.
+	
+	\item \texttt{int eliminar(trie\_t tr, char* str)} Elimina el string \texttt{str} dentro del trie \texttt{tr}, desalocando la memoria utilizada. Retorna verdadero en caso de operación existosa, y STR\_NO\_PER en caso contrario.
+		
+	\item \texttt{int eliminar(trie\_t tr)} Elimina todos los strings dentro del trie \texttt{tr}, desalocando la memoria utilizada, quedando el trie vacío. Retorna verdadero en caso de operación existosa, y TRI\_VAC en caso contrario.
+	
+\end{enumerate}
+
+Para la implementación, se deben considerar que los tipos \texttt{trie\_t} y \texttt{nodo\_t} están definidos de la siguiente manera:
+
+\begin{verbatim}
+typedef struct trie {
+  nodo_t raiz;
+}*trie_t;
+
+typedef struct nodo {
+  char rotulo;
+  unsigned int contador;
+  struct nodo * padre;
+  lista_t hijos;
+} *nodo_t;
+
+\end{verbatim}
+
+\section{Programa Principal}
+Implementar una aplicación de consola que le permita al usuario especificar un archivo de texto, compuesto por todo tipo de caracteres, a partir del cual se debe contabilizar la cantidad de apariciones de cada palabra en el archivo. Se considerá como palabra, a toda secuencia de caracteres $S$, tal que:
+\begin{center}
+$S=<c_1,\dots,c_n>, n>0$\\
+$c_i \in \{$a,\dots,z$\} \cup \{$á,é,í,ó,ú$\}, \forall{i} (0<i<=n)$.
+\end{center}
+
+El programa debe ofrecer un menú de operaciones, con las que el usuario puede consultar y manipular el estado del trie:
+\begin{enumerate}	
+	\item Iniciar: permite un nuevo trie, a partir del ingreso de un nombre de archivo de texto.
+	
+	\item Mostrar palabras: permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
+	
+	\item Consultar: permite determinar si una dada palabra ingresada pertenece o no al archivo, y en consecuencia, cuántas veces esta se repite en el archivo.
+	
+	\item Comienzan con: permite consultar cuántas palabras comienzan con una letra dada.
+	
+	\item Es prefijo: permite consultar si una palabra ingresada es prefijo de otras almacenadas en el trie.
+	
+	\item Salir: permite salir del programa.
+\end{enumerate}
+	
+\section*{Sobre la implementación}
+\begin{itemize}
+	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}, \textsf{trie.c} y \textsf{main.c}}
+	respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
+	
+	\item Es importante que durante la implementación del proyecto se haga un uso
+	cuidadoso y eficiente de la memoria, tanto para la reservar
+	(\texttt{malloc}), como para liberar (\texttt{free}) el espacio asociado a
+	variables y estructuras.
+	
+	\item Se deben respetar con exactitud los nombres de tipos y encabezados de
+	funciones especificados en el enunciado. Los proyectos que no cumplan esta condición quedarán automáticamente desaprobados.
+	
+	\item La compilación debe realizarse con el \emph{flag} \texttt{-Wall} habilitado. El código debe compilar \textbf{sin advertencias} de ningún tipo.
+	
+	\item La copia o plagio del proyecto es una falta grave. Quien incurra en estos actos de deshonestidad académica, desaprobará automáticamente el proyecto.
+\end{itemize}
+
+\section*{Sobre el estilo de programación}
+\begin{itemize}
+		
+	\item El código implementado debe reflejar la aplicación de las técnicas de programación modular estudiadas a lo largo de la carrera.
+	
+	\item En el código, entre eficiencia y claridad, se debe optar por la claridad. Toda decisión en este sentido debe constar en la documentación que acompaña al programa implementado.
+	
+	\item El código debe estar indentado, comentado, y debe reflejar el uso adecuado de nombres significativos para la definición de variables, funciones y parámetros.
+	
+\end{itemize}
+
+\section*{Sobre la documentación}
+
+Los proyectos que no incluyan documentación estarán automáticamente desaprobados. La misma debe:
+\begin{itemize}
+	
+	\item Estar dirigida a usuarios finales y desarrolladores.
+	
+	\item Explicar detalladamente los programas realizados, incluyendo el diseño de la aplicación y el modelo de datos utilizado, así como toda decisión de diseño tomada, y toda observación que se considere pertinente.
+	
+	\item Incluir explicación de todas las funciones implementadas, indicando su prototipo y el uso de los parámetros de entrada y de salida (tanto dentro del código fuente como en la documentación del proyecto). Se espera que la explicación no sea una mera copia del código fuente, sino más bien una síntesis de lo implementado a través de diagramas, pseudocódigos, o cualquier representación que considere adecuada.
+	
+	\item En general, se deben respetar todas las consignas indicadas en la “Guía para la documentación de proyectos de software” entregada por la cátedra.
+	
+\end{itemize}
+
+\section*{Sobre la entrega}
+Toda comisión que no cumpla con los requerimientos, estará automáticamente desaprobada. Los mismos son:
+\begin{itemize}
+		
+	\item Las comisiones estarán conformadas por 2 alumnos, y serán las que oportunamente registró y notificó la cátedra.
+		
+	\item La entrega del código fuente y la documentación se realizará a través de un archivo comprimido \textbf{zip} o \textbf{rar}, denominado \textbf{\textit{PR1-Apellido1-Apellido2}}, que debe incluir las siguientes carpetas:
+	\begin{itemize}
+		\item \textbf{Fuentes}, donde se deben incorporar los archivos fuente “.c” y “.h” (ningún otro).
+		\item \textbf{Documentación}, donde se debe incorporar el informe del proyecto en formato PDF (ningún otro).
+	\end{itemize}		
+	\item El archivo comprimido debe enviarse por e-mail, respetando el siguiente formato: 
+	\begin{itemize}
+		\item \textbf{Para:} \textit{federico.joaquin@cs.uns.edu.ar}
+		\item \textbf{Asunto:} \textit{OC :: PR1 :: COM XX :: Apellido1 - Apellido2}
+		\item \textbf{Cuerpo del e-mail:} \\
+		\textit{Se adjunta Proyecto Nº 1, de la comisión XX: } \\
+		\textit{Apellido, Nombre 1 - LU 1} \\
+		\textit{Apellido, Nombre 2 - LU 2}
+	\end{itemize}
+	
+	\item El e-mail debe ser enviado con anterioridad al día \textbf{Martes 10 de Octubre de 2017}, a las \textbf{22:00 hs}. Se considerará como hora de ingreso, la registrada en el servidor de e-mail del DCIC.
+		
+\end{itemize}
+
+\section*{Sobre la corrección}
+
+\begin{itemize}
+	
+	\item La cátedra evaluará tanto el \textbf{diseño} e \textbf{implementación}
+	como la \textbf{documentación} y \textbf{presentación} del proyecto, y el cumpliemiento de \textbf{todas} las condiciones de entrega.
+	
+	\item Tanto para compilar el proyecto, como para verificar su funcionamiento, se utilizará la máquina virtual “OCUNS” publicada en el sitio web de la cátedra.
+	
+\end{itemize}
+\end{document}
