@@ -29,35 +29,40 @@ Implementar un TDA Lista Ordenada en lenguaje C, cuyos elementos sean punteros g
 \begin{enumerate}
 	
 	%  \item \texttt{lista\_t lista\_crear()} Crea una lista vacía y la retorna.
-	\item \texttt{lista\_t  crearLista(int (*f)(void*,void*))} Crea una lista vacía y la devuelve. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	\item \texttt{lista\_t  crear(int (*f)(void*,void*))} Crea una lista vacía y la devuelve. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
 	
-	\item \texttt{int lista\_insertar(lista\_t lista,  void *elem)}
+	\item \texttt{int insertar(lista\_t lista,  void *elem)}
 	Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada.
 	Si procede exitosamente retorna verdadero. En otro caso retorna falso.
 	
-	\item \texttt{int lista\_eliminar(lista\_t lista, unsigned int pos)} Elimina
+	\item \texttt{int eliminar(lista\_t lista, void * pos)} Elimina
 	el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente
 	al eliminar en posiciones intermedias. Retorna verdadero si procede con
 	éxito, falso en caso contrario. Si la posición no es válida, aborta con
 	\emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{int lista\_cantidad(lista\_t lista)} Retorna la cantidad de
+	\item \texttt{int cantidad(lista\_t lista)} Retorna la cantidad de
 	elementos de la lista. Si la lista no está inicializada, el programa aborta
 	con \emph{exit status} \texttt{LST\_NO\_INI}.
 	
-	\item \texttt{void* lista\_obtener(lista\_t lista, unsigned int pos)} Retorna
+	\item \texttt{void* recuperar(lista\_t lista,void* pos)} Retorna
 	un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es
 	válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{void* lista\_buscar(lista\_t lista,void *elem)} Busca el elemento elem 
+	\item \texttt{void* buscar(lista\_t lista,void *elem)} Busca el elemento elem 
 	en la lista. Si lo encuentra, retorna un puntero al elemento. Caso contrario 
 	retorna \texttt{NULL}.
 	
+	\item \texttt{void* siguiente(lista\_t lista,void *pos)} Retorna la posición siguiente a \texttt{pos} 
+	en la lista. Si \texttt{pos} es la última posición de la lista o es una posición inválida retorna \texttt{NULL}.
+
+	\item \texttt{void* primer(lista\_t lista)} Retorna la primer posición de la lista. Si la lista es vacía retorna \texttt{NULL}.
+
 	%  \item \texttt{int lista\_adjuntar(lista\_t lista, int elem)} Inserta el
 	%    elemento \texttt{elem} en la última posición de la lista. Si la lista no
 	%    está inicializada, aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
 	
-	\item \texttt{int lista\_destruir(lista\_t* lista)} Libera la memoria ocupada
+	\item \texttt{int destruir(lista\_t* lista)} Libera la memoria ocupada
 	por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito.
 	Si la lista no está inicializada, aborta con \emph{exit status}
 	\texttt{LST\_NO\_INI}.
