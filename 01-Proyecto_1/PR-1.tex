@@ -19,7 +19,7 @@ Con este objetivo, se debe implementar:
 	
 	\item El TDA Trie, que almacena cadena de caracteres y un contador asociado a cada cadena, y que permite recuperar fácilmente tanto palabras como su correspondiente contador.
 	
-	\item Un programa principal, el cual debe tomar como parámetro de entrada un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrezcer un conjunto de operaciones de consulta y manipulación del trie.
+	\item Un programa principal, el cual debe tomar como parámetro de entrada un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del trie.
 	
 \end{itemize}
 
@@ -28,44 +28,25 @@ Implementar un TDA Lista Ordenada en lenguaje C, cuyos elementos sean punteros g
 
 \begin{enumerate}
 	
-	%  \item \texttt{lista\_t lista\_crear()} Crea una lista vacía y la retorna.
-	\item \texttt{lista\_t  crear(int (*f)(void*,void*))} Crea una lista vacía y la devuelve. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	\item \texttt{lista\_t crear\_lista(int (*f)(void*,void*))} Crea y retorna una lista vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
 	
-	\item \texttt{int insertar(lista\_t lista,  void *elem)}
-	Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada.
-	Si procede exitosamente retorna verdadero. En otro caso retorna falso.
+	\item \texttt{int insertar(lista\_t lista,  void* elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(lista\_t lista, void * pos)} Elimina
-	el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente
-	al eliminar en posiciones intermedias. Retorna verdadero si procede con
-	éxito, falso en caso contrario. Si la posición no es válida, aborta con
-	\emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{int eliminar(lista\_t lista, void* pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{int cantidad(lista\_t lista)} Retorna la cantidad de
-	elementos de la lista. Si la lista no está inicializada, el programa aborta
-	con \emph{exit status} \texttt{LST\_NO\_INI}.
+	\item \texttt{int size(lista\_t lista)} Retorna la cantidad de elementos de la lista. Si la lista no está inicializada, el programa aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
 	
-	\item \texttt{void* recuperar(lista\_t lista,void* pos)} Retorna
-	un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es
-	válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{void* primer\_pos(lista\_t lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
 	
-	\item \texttt{void* buscar(lista\_t lista,void *elem)} Busca el elemento elem 
-	en la lista. Si lo encuentra, retorna un puntero al elemento. Caso contrario 
-	retorna \texttt{NULL}.
-	
-	\item \texttt{void* siguiente(lista\_t lista,void *pos)} Retorna la posición siguiente a \texttt{pos} 
-	en la lista. Si \texttt{pos} es la última posición de la lista o es una posición inválida retorna \texttt{NULL}.
+	\item \texttt{void* ultima\_pos(lista\_t lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
 
-	\item \texttt{void* primer(lista\_t lista)} Retorna la primer posición de la lista. Si la lista es vacía retorna \texttt{NULL}.
-
-	%  \item \texttt{int lista\_adjuntar(lista\_t lista, int elem)} Inserta el
-	%    elemento \texttt{elem} en la última posición de la lista. Si la lista no
-	%    está inicializada, aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
+	\item \texttt{void* siguiente(lista\_t lista, void* pos)} Retorna la posición siguiente a \texttt{pos} en la lista. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{int destruir(lista\_t* lista)} Libera la memoria ocupada
-	por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito.
-	Si la lista no está inicializada, aborta con \emph{exit status}
-	\texttt{LST\_NO\_INI}.
+	\item \texttt{void* buscar(lista\_t lista, void* elem)} Busca y retorna la primer posición que contenga al elemento \texttt{elem} en la lista. En caso de que el elemento no exista en la lista, retorna \texttt{NULL}.
+	
+	\item \texttt{void* recuperar(lista\_t lista, void* pos)} Retorna un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	
+	\item \texttt{int destruir(lista\_t lista)} Libera la memoria ocupada por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito, falso en caso contrario. Si la lista no está inicializada, aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
 	
 \end{enumerate}
 
@@ -74,22 +55,22 @@ Para la implementación, se debe considerar que los tipos \texttt{lista\_t} y \t
 \begin{verbatim}
 typedef struct lista_ordenada {
   unsigned int cantidad_elementos;
-  celda_t* primera_celda;
-} *lista_t;
+  celda_t primera_celda;
+} * lista_t;
 
 typedef struct celda {
-  void *elemento;
-  celda_t *proxima_celda;
-} celda_t;
+  void * elemento;
+  struct celda * proxima_celda;
+} * celda_t;
 \end{verbatim}
 
 \section{TDA Trie}
 
-Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{caracter} (\texttt{char}), y almacenan adicionalmente un contador de tipo \emph{entero} (\texttt{int}). El trie debe implementarse manteniendo referencia a un nodo raíz, y considerando cada nodo del árbol como una estructura que mantiene referencia al padre y una lista ordenada de nodos como hijos. La implementación debe proveer las operaciones:
+Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{caracter} (\texttt{char}), y almacena adicionalmente un contador de tipo \emph{entero} (\texttt{int}). El trie debe implementarse manteniendo referencia a un nodo raíz, y considerando cada nodo del árbol como una estructura que mantiene referencia al padre y una lista ordenada de nodos como hijos. La implementación debe proveer las operaciones:
 
 \begin{enumerate}
 	
-	\item \texttt{trie\_t trie\_crear()} Retorna un nuevo trie vacío, esto es, con nodo raíz con rótulo nulo y contador en cero.
+	\item \texttt{trie\_t crear\_trie()} Retorna un nuevo trie vacío, esto es, con nodo raíz que mantiene rótulo nulo y contador en cero.
 	
 	\item \texttt{int insertar(trie\_t tr, char* str)} Inserta el string \texttt{str} en el trie \texttt{tr}, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción (o actualización) fue exitosa, falso en caso contrario.
 
@@ -97,11 +78,11 @@ Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{
 	
 	\item \texttt{int recuperar(trie\_t tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie \texttt{tr}. Si el string no pertenece al trie, retorna STR\_NO\_PER.
 
-	\item \texttt{int size(trie\_t tr)} Retona la cantidad de palabras almacenadas en el trie \texttt{tr}.
+	\item \texttt{int size(trie\_t tr)} Retorna la cantidad de palabras almacenadas en el trie \texttt{tr}.
 	
-	\item \texttt{int eliminar(trie\_t tr, char* str)} Elimina el string \texttt{str} dentro del trie \texttt{tr}, desalocando la memoria utilizada. Retorna verdadero en caso de operación existosa, y STR\_NO\_PER en caso contrario.
+	\item \texttt{int eliminar(trie\_t tr, char* str)} Elimina el string \texttt{str} dentro del trie \texttt{tr}, liberando la memoria utilizada. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
 		
-	\item \texttt{int eliminar(trie\_t tr)} Elimina todos los strings dentro del trie \texttt{tr}, desalocando la memoria utilizada, quedando el trie vacío. Retorna verdadero en caso de operación existosa, y TRI\_VAC en caso contrario.
+	\item \texttt{int eliminar(trie\_t tr)} Elimina todos los strings dentro del trie \texttt{tr}, liberando la memoria utilizada, quedando el trie vacío. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
 	
 \end{enumerate}
 
@@ -110,14 +91,14 @@ Para la implementación, se deben considerar que los tipos \texttt{trie\_t} y \t
 \begin{verbatim}
 typedef struct trie {
   nodo_t raiz;
-}*trie_t;
+} * trie_t;
 
 typedef struct nodo {
   char rotulo;
   unsigned int contador;
   struct nodo * padre;
   lista_t hijos;
-} *nodo_t;
+} * nodo_t;
 
 \end{verbatim}
 
@@ -130,7 +111,7 @@ $c_i \in \{$a,\dots,z$\} \cup \{$á,é,í,ó,ú$\}, \forall{i} (0<i<=n)$.
 
 El programa debe ofrecer un menú de operaciones, con las que el usuario puede consultar y manipular el estado del trie:
 \begin{enumerate}	
-	\item Iniciar: permite un nuevo trie, a partir del ingreso de un nombre de archivo de texto.
+	\item Iniciar: permite la creación de un nuevo trie, a partir del ingreso de un nombre de archivo de texto.
 	
 	\item Mostrar palabras: permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
 	
