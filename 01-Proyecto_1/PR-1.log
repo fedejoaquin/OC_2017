@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.5)  4 SEP 2017 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  5 SEP 2017 10:48
 entering extended mode
 **./PR-1.tex
 (PR-1.tex
@@ -431,7 +431,26 @@ s
 \f@nch@O@erf=\skip51
 \f@nch@O@olf=\skip52
 \f@nch@O@orf=\skip53
-)) (PR-1.aux
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen107
+\extrarowheight=\dimen108
+\NC@list=\toks18
+\extratabsurround=\skip54
+\backup@length=\skip55
+)
+\TX@col@width=\dimen109
+\TX@old@table=\dimen110
+\TX@old@col=\dimen111
+\TX@target=\dimen112
+\TX@delta=\dimen113
+\TX@cols=\count91
+\TX@ftn=\toks19
+) (PR-1.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
@@ -439,34 +458,34 @@ LaTeX Info: Redefining \% on input line 10.
 )
 \openout1 = `PR-1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Info: Redefining \. on input line 9.
+LaTeX Info: Redefining \% on input line 9.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count91
-\scratchdimen=\dimen107
+\scratchcounter=\count92
+\scratchdimen=\dimen114
 \scratchbox=\box26
-\nofMPsegments=\count92
-\nofMParguments=\count93
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count94
-\MPscratchDim=\dimen108
-\MPnumerator=\count95
-\makeMPintoPDFobject=\count96
-\everyMPtoPDFconversion=\toks19
+\nofMPsegments=\count93
+\nofMParguments=\count94
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count95
+\MPscratchDim=\dimen115
+\MPnumerator=\count96
+\makeMPintoPDFobject=\count97
+\everyMPtoPDFconversion=\toks21
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -513,11 +532,11 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 10.
+(Font)              <12> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 10.
+(Font)              <8> on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 10.
+(Font)              <6> on input line 11.
 Package epstopdf Info: Source file: <estilo/DeptoLogo.eps>
 (epstopdf)                    date: 2011-08-05 09:24:34
 (epstopdf)                    size: 31167 bytes
@@ -526,7 +545,7 @@ Package epstopdf Info: Source file: <estilo/DeptoLogo.eps>
 (epstopdf)                    size: 6790 bytes
 (epstopdf)             Command: <epstopdf --outfile=estilo/DeptoLogo-eps-conver
 ted-to.pdf estilo/DeptoLogo.eps>
-(epstopdf)             \includegraphics on input line 10.
+(epstopdf)             \includegraphics on input line 11.
 Package epstopdf Info: Output file is already uptodate.
 
 <estilo/DeptoLogo-eps-converted-to.pdf, id=1, 648.4225pt x 695.59875pt>
@@ -534,7 +553,7 @@ File: estilo/DeptoLogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use estilo/DeptoLogo-eps-converted-to.pdf>
 Package pdftex.def Info: estilo/DeptoLogo-eps-converted-to.pdf used on input li
-ne 10.
+ne 11.
 (pdftex.def)             Requested size: 56.3705pt x 60.46777pt.
 Package epstopdf Info: Source file: <estilo/UniLogo.eps>
 (epstopdf)                    date: 2011-08-05 09:24:34
@@ -544,7 +563,7 @@ Package epstopdf Info: Source file: <estilo/UniLogo.eps>
 (epstopdf)                    size: 11036 bytes
 (epstopdf)             Command: <epstopdf --outfile=estilo/UniLogo-eps-converte
 d-to.pdf estilo/UniLogo.eps>
-(epstopdf)             \includegraphics on input line 10.
+(epstopdf)             \includegraphics on input line 11.
 Package epstopdf Info: Output file is already uptodate.
 
 <estilo/UniLogo-eps-converted-to.pdf, id=2, 732.7375pt x 705.63625pt>
@@ -552,10 +571,10 @@ File: estilo/UniLogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use estilo/UniLogo-eps-converted-to.pdf>
 Package pdftex.def Info: estilo/UniLogo-eps-converted-to.pdf used on input line
- 10.
+ 11.
 (pdftex.def)             Requested size: 63.59795pt x 61.24342pt.
 
-Overfull \hbox (11.93533pt too wide) in paragraph at lines 31--32
+Overfull \hbox (11.93533pt too wide) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 de los ele-men-tos in-ser-ta-dos es-tara da-do por la fun-cio
 n de com-pa-ra-cion \OT1/cmtt/m/n/12 int f(void*,void*)\OT1/cmr/m/n/12 .
  []
@@ -563,26 +582,55 @@ n de com-pa-ra-cion \OT1/cmtt/m/n/12 int f(void*,void*)\OT1/cmr/m/n/12 .
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./estilo/DeptoLogo-eps-co
-nverted-to.pdf> <./estilo/UniLogo-eps-converted-to.pdf>] [2] [3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 181.
+nverted-to.pdf> <./estilo/UniLogo-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
+ []
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+[3] [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 187.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
- [5] (PR-1.aux
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 240--248
+
+ []
+
+
+Overfull \hbox (53.6248pt too wide) in paragraph at lines 218--250
+[][] 
+ []
+
+[6] (PR-1.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 3319 strings out of 493333
- 42277 string characters out of 3139162
- 118662 words of memory out of 3000000
- 6788 multiletter control sequences out of 15000+200000
+ 3410 strings out of 493333
+ 43398 string characters out of 3139185
+ 120430 words of memory out of 3000000
+ 6873 multiletter control sequences out of 15000+200000
  9111 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,16n,43p,458b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -598,9 +646,9 @@ cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PR-1.pdf (5 pages, 170799 bytes).
+Output written on PR-1.pdf (6 pages, 176968 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
+ 81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

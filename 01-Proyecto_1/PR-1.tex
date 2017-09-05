@@ -4,6 +4,7 @@
 
 \documentclass[12pt,a4paper]{article}
 \input{estilo/Catedras.sty}
+\usepackage{tabularx}
 
 \begin{document}
 
@@ -32,23 +33,24 @@ Implementar un TDA Lista Ordenada en lenguaje C, cuyos elementos sean punteros g
 	
 	\item \texttt{int insertar(lista\_t lista,  void* elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(lista\_t lista, void* pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{int eliminar(lista\_t lista, celda\_t pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{int size(lista\_t lista)} Retorna la cantidad de elementos de la lista. Si la lista no está inicializada, el programa aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
+	\item \texttt{int size(lista\_t lista)} Retorna la cantidad de elementos de la lista.
 	
 	\item \texttt{void* primer\_pos(lista\_t lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
 	
-	\item \texttt{void* ultima\_pos(lista\_t lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{celda\_t ultima\_pos(lista\_t lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
 
-	\item \texttt{void* siguiente(lista\_t lista, void* pos)} Retorna la posición siguiente a \texttt{pos} en la lista. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{celda\_t siguiente(lista\_t lista, celda\_t pos)} Retorna la posición siguiente a \texttt{pos} en la lista. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{void* buscar(lista\_t lista, void* elem)} Busca y retorna la primer posición que contenga al elemento \texttt{elem} en la lista. En caso de que el elemento no exista en la lista, retorna \texttt{NULL}.
+	\item \texttt{celda\_t buscar(lista\_t lista, void* elem)} Busca y retorna la primer posición que contenga al elemento \texttt{elem} en la lista. En caso de que el elemento no exista en la lista, retorna \texttt{NULL}.
 	
-	\item \texttt{void* recuperar(lista\_t lista, void* pos)} Retorna un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{void* recuperar(lista\_t lista, celda\_t pos)} Retorna un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{int destruir(lista\_t lista)} Libera la memoria ocupada por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito, falso en caso contrario. Si la lista no está inicializada, aborta con \emph{exit status} \texttt{LST\_NO\_INI}.
-	
+	\item \texttt{int destruir(lista\_t lista)} Libera la memoria ocupada por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito, falso en caso contrario.	
 \end{enumerate}
+
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
 
 Para la implementación, se debe considerar que los tipos \texttt{lista\_t} y \texttt{celda\_t} están definidos de la siguiente manera:
 
@@ -72,11 +74,11 @@ Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{
 	
 	\item \texttt{trie\_t crear\_trie()} Retorna un nuevo trie vacío, esto es, con nodo raíz que mantiene rótulo nulo y contador en cero.
 	
-	\item \texttt{int insertar(trie\_t tr, char* str)} Inserta el string \texttt{str} en el trie \texttt{tr}, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción (o actualización) fue exitosa, falso en caso contrario.
+	\item \texttt{int insertar(trie\_t tr, char* str)} Inserta el string \texttt{str} en el trie \texttt{tr}, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción fue exitosa, falso en caso de que el string ya perteneciera al trie.
 
 	\item \texttt{int pertenece(trie\_t tr, char* str)} Retorna verdadero si el string \texttt{srt} pertenece al trie \texttt{tr}, falso en caso contrario.
 	
-	\item \texttt{int recuperar(trie\_t tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie \texttt{tr}. Si el string no pertenece al trie, retorna STR\_NO\_PER.
+	\item \texttt{int recuperar(trie\_t tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie \texttt{tr}. Si el string no pertenece al trie, retorna \texttt{STR\_NO\_PER}.
 
 	\item \texttt{int size(trie\_t tr)} Retorna la cantidad de palabras almacenadas en el trie \texttt{tr}.
 	
@@ -85,6 +87,8 @@ Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{
 	\item \texttt{int eliminar(trie\_t tr)} Elimina todos los strings dentro del trie \texttt{tr}, liberando la memoria utilizada, quedando el trie vacío. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
 	
 \end{enumerate}
+
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_trie}, si el trie parametrizado no está inicializado, se debe abortar con \emph{exit status} \texttt{TRI\_NO\_INI}. \\
 
 Para la implementación, se deben considerar que los tipos \texttt{trie\_t} y \texttt{nodo\_t} están definidos de la siguiente manera:
 
@@ -111,19 +115,19 @@ $c_i \in \{$a,\dots,z$\} \cup \{$á,é,í,ó,ú$\}, \forall{i} (0<i<=n)$.
 
 El programa debe ofrecer un menú de operaciones, con las que el usuario puede consultar y manipular el estado del trie:
 \begin{enumerate}	
-	\item Iniciar: permite la creación de un nuevo trie, a partir del ingreso de un nombre de archivo de texto.
+	\item \textbf{Iniciar:} permite la creación de un nuevo trie, a partir del ingreso de un nombre de archivo de texto.
 	
-	\item Mostrar palabras: permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
+	\item \textbf{Mostrar palabras:} permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
 	
-	\item Consultar: permite determinar si una dada palabra ingresada pertenece o no al archivo, y en consecuencia, cuántas veces esta se repite en el archivo.
+	\item \textbf{Consultar:} permite determinar si una dada palabra ingresada pertenece o no al archivo, y en consecuencia, cuántas veces esta se repite en el archivo.
 	
-	\item Comienzan con: permite consultar cuántas palabras comienzan con una letra dada.
+	\item \textbf{Comienzan con:} permite consultar cuántas palabras comienzan con una letra dada.
 	
-	\item Es prefijo: permite consultar si una palabra ingresada es prefijo de otras almacenadas en el trie.
+	\item \textbf{Es prefijo:} permite consultar si una palabra ingresada es prefijo de otras almacenadas en el trie.
 
-	\item Porcentaje prefijo: dado un prefijo, indicar el porcentaje de palabras del trie que comienzan con él. 
+	\item \textbf{Porcentaje prefijo:} dado un prefijo, indica el porcentaje de palabras del trie que comienzan con él. 
 	
-	\item Salir: permite salir del programa.
+	\item \textbf{Salir:} permite salir del programa.
 \end{enumerate}
 	
 \section*{Sobre la implementación}
@@ -154,6 +158,8 @@ El programa debe ofrecer un menú de operaciones, con las que el usuario puede c
 	\item El código debe estar indentado, comentado, y debe reflejar el uso adecuado de nombres significativos para la definición de variables, funciones y parámetros.
 	
 \end{itemize}
+
+\pagebreak
 
 \section*{Sobre la documentación}
 
@@ -205,4 +211,41 @@ Toda comisión que no cumpla con los requerimientos, estará automáticamente de
 	\item Tanto para compilar el proyecto, como para verificar su funcionamiento, se utilizará la máquina virtual “OCUNS” publicada en el sitio web de la cátedra.
 	
 \end{itemize}
+
+\section*{Sobre las constantes a utilizar}
+Se considerarán los siguientes valores para las constantes definidas en las especificaciones de las operaciones del proyecto: \\
+
+\begin{tabular}[t]{c c c}	
+	\begin{minipage}[t]{0.25\textwidth}
+			\textbf{\emph{Constante}} \\
+			\texttt{FALSE} \\
+			\texttt{TRUE} \\
+			\texttt{LST\_NO\_INI} \\
+			\texttt{LST\_POS\_INV} \\
+			\texttt{LST\_VAC} \\
+			\texttt{TRI\_NO\_INI} \\
+			\texttt{STR\_NO\_PER}
+	\end{minipage} &
+	\begin{minipage}[t]{0.1\textwidth}
+			\textbf{\emph{Valor}} \\
+			\texttt{0} \\
+			\texttt{1} \\
+			\texttt{2} \\
+			\texttt{3} \\
+			\texttt{4} \\
+			\texttt{5} \\
+			\texttt{-1} \\
+	\end{minipage} &
+	\begin{minipage}[t]{0.65\textwidth}
+		\textbf{\emph{Significado}}\\
+		 Valor lógico falso.\\
+		 Valor lógico verdadero.\\
+		 Intento de acceso inválido sobre lista sin inicializar.\\
+		 Intento de acceso a posición inválida en lista.\\
+		 Intento de acceso inválido sobre lista vacía.\\
+		 Iintento de acceso inválido sobre trie sin inicializar.\\			
+		 String no perteneciente a trie.\\
+	\end{minipage}
+\end{tabular}	
+
 \end{document}
