@@ -16,54 +16,90 @@ El objetivo principal del proyecto, es implementar en lenguaje C un programa que
 Con este objetivo, se debe implementar:
 \begin{itemize}
 	
-	\item El TDA Lista Ordenada, que almacene elementos de tipo genérico, y ordene los mismos a través de un comparador diseñado para tales elementos.
+	\item El TDA Lista, que almacene elementos de tipo genérico, y manipula la misma a través del concepto de posición.
+	
+	\item El TDA Lista Ordenada, que haciendo uso del TDA Lista definido anteriormente, almacene elementos de tipo genérico pero de forma ordenada. Para esto, hará uso de un comparador diseñado para comparar dichos elementos.
 	
 	\item El TDA Trie, que almacena cadena de caracteres y un contador asociado a cada cadena, y que permite recuperar fácilmente tanto palabras como su correspondiente contador.
 	
-	\item Un programa principal, el cual debe tomar como parámetro de entrada un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del trie.
+	\item Un programa principal, el cual debe tomar como argumento por línea de comandos el nombre de un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del trie.
 	
 \end{itemize}
 
-\section{TDA Lista Ordenada}
-Implementar un TDA Lista Ordenada en lenguaje C, cuyos elementos sean punteros genéricos. El orden de los elementos en la lista se especifica al momento de la creación, a través de una función de comparación. La lista debe ser simplemente enlazada sin centinelas. La implementación debe proveer las operaciones:
+\section{TDA Lista}
+Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos. La lista debe ser simplemente enlazada sin centinelas. La implementación debe proveer las operaciones:
 
 \begin{enumerate}
 	
-	\item \texttt{lista\_t crear\_lista(int (*f)(void*,void*))} Crea y retorna una lista vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	\item \texttt{TLista crear\_lista()} Crea y retorna una lista vacía.
 	
-	\item \texttt{int insertar(lista\_t lista,  void* elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int insertar(TLista lista, TPosicion pos, void* elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{NULL}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(lista\_t lista, celda\_t pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{int size(lista\_t lista)} Retorna la cantidad de elementos de la lista.
+	\item \texttt{TPosicion primera(TLista lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
 	
-	\item \texttt{void* primer\_pos(lista\_t lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{TPosicion ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
 	
-	\item \texttt{celda\_t ultima\_pos(lista\_t lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{TPosicion anterior(TLista lista, TPosicion pos)} Retorna la posición anterior a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la primer posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	
+	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	
+	\item \texttt{void* recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 
-	\item \texttt{celda\_t siguiente(lista\_t lista, celda\_t pos)} Retorna la posición siguiente a \texttt{pos} en la lista. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{int size(TLista lista)} Retorna la cantidad de elementos de la lista.	
 	
-	\item \texttt{celda\_t buscar(lista\_t lista, void* elem)} Busca y retorna la primer posición que contenga al elemento \texttt{elem} en la lista. En caso de que el elemento no exista en la lista, retorna \texttt{NULL}.
-	
-	\item \texttt{void* recuperar(lista\_t lista, celda\_t pos)} Retorna un puntero al elemento en la posición \texttt{pos} de la lista. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
-	
-	\item \texttt{int destruir(lista\_t lista)} Libera la memoria ocupada por la lista y le asigna \texttt{NULL}. Retorna verdadero en caso de éxito, falso en caso contrario.	
 \end{enumerate}
 
 En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
 
-Para la implementación, se debe considerar que los tipos \texttt{lista\_t} y \texttt{celda\_t} están definidos de la siguiente manera:
+Para la implementación, se debe considerar que los tipos \texttt{TLista}, \texttt{TCelda} y \texttt{TPosicion}, están definidos de la siguiente manera:
 
 \begin{verbatim}
-typedef struct lista_ordenada {
+typedef struct lista {
   unsigned int cantidad_elementos;
-  celda_t primera_celda;
-} * lista_t;
+  TCelda primer_celda;
+} * TLista;
 
 typedef struct celda {
   void * elemento;
   struct celda * proxima_celda;
-} * celda_t;
+} * TCelda;
+
+typedef struct celda * TPosicion;
+
+\end{verbatim}
+
+\section{TDA Lista Ordenada}
+Implementar un TDA Lista Ordenada en lenguaje C, haciendo uso del TDA Lista, cuyos elementos sean punteros genéricos. El orden de los elementos en la lista se especifica al momento de la creación, a través de una función de comparación. La implementación debe proveer las operaciones:
+
+\begin{enumerate}
+	
+	\item \texttt{TListaOrd crear\_lista\_ord(int (*f)(void*,void*))} Crea y retorna una lista ordenada vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	
+	\item \texttt{int insertar(TListaOrd lista,  void* elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada de forma ascendente. Retorna verdadero si procede con éxito, falso en caso contrario.
+	
+	\item \texttt{int eliminar(TListaOrd lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	
+	\item \texttt{int size(TListaOrd lista)} Retorna la cantidad de elementos de la lista.
+	
+	\item \texttt{void* primera(TListaOrd lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	
+	\item \texttt{TPosicion ultima(TListaOrd lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+
+	\item \texttt{TPosicion siguiente(TListaOrd lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	
+\end{enumerate}
+
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
+
+Para la implementación, se debe considerar que \texttt{TListaOrd} está definido de la siguiente manera:
+
+\begin{verbatim}
+typedef struct lista_ordenada {
+  unsigned int cantidad_elementos;
+  TLista lista;
+} * TListaOrd;
 \end{verbatim}
 
 \section{TDA Trie}
@@ -72,51 +108,48 @@ Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{
 
 \begin{enumerate}
 	
-	\item \texttt{trie\_t crear\_trie()} Retorna un nuevo trie vacío, esto es, con nodo raíz que mantiene rótulo nulo y contador en cero.
+	\item \texttt{TTrie crear\_trie()} Retorna un nuevo trie vacío, esto es, con nodo raíz que mantiene rótulo nulo y contador en cero.
 	
-	\item \texttt{int insertar(trie\_t tr, char* str)} Inserta el string \texttt{str} en el trie \texttt{tr}, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción fue exitosa, falso en caso de que el string ya perteneciera al trie.
+	\item \texttt{int insertar(TTrie tr, char* str)} Inserta el string \texttt{str} en el trie, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción fue exitosa, falso en caso de que el string ya perteneciera al trie.
 
-	\item \texttt{int pertenece(trie\_t tr, char* str)} Retorna verdadero si el string \texttt{srt} pertenece al trie \texttt{tr}, falso en caso contrario.
+	\item \texttt{int pertenece(TTrie tr, char* str)} Retorna verdadero si el string \texttt{srt} pertenece al trie, falso en caso contrario.
 	
-	\item \texttt{int recuperar(trie\_t tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie \texttt{tr}. Si el string no pertenece al trie, retorna \texttt{STR\_NO\_PER}.
+	\item \texttt{int recuperar(TTrie tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie. Si el string no pertenece al trie, retorna \texttt{STR\_NO\_PER}.
 
-	\item \texttt{int size(trie\_t tr)} Retorna la cantidad de palabras almacenadas en el trie \texttt{tr}.
+	\item \texttt{int size(TTrie tr)} Retorna la cantidad de palabras almacenadas en el trie.
 	
-	\item \texttt{int eliminar(trie\_t tr, char* str)} Elimina el string \texttt{str} dentro del trie \texttt{tr}, liberando la memoria utilizada. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
+	\item \texttt{int eliminar(TTrie tr, char* str)} Elimina el string \texttt{str} dentro del trie, liberando la memoria utilizada. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
 		
-	\item \texttt{int eliminar(trie\_t tr)} Elimina todos los strings dentro del trie \texttt{tr}, liberando la memoria utilizada, quedando el trie vacío. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
-	
 \end{enumerate}
 
 En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_trie}, si el trie parametrizado no está inicializado, se debe abortar con \emph{exit status} \texttt{TRI\_NO\_INI}. \\
 
-Para la implementación, se deben considerar que los tipos \texttt{trie\_t} y \texttt{nodo\_t} están definidos de la siguiente manera:
+Para la implementación, se deben considerar que los tipos \texttt{TTrie} y \texttt{TNodo} están definidos de la siguiente manera:
 
 \begin{verbatim}
 typedef struct trie {
-  nodo_t raiz;
-} * trie_t;
+  unsigned int cantidad_elementos;
+  TNodo raiz;
+} * TTrie;
 
 typedef struct nodo {
   char rotulo;
   unsigned int contador;
   struct nodo * padre;
-  lista_t hijos;
-} * nodo_t;
+  TListaOrd hijos;
+} * TNodo;
 
 \end{verbatim}
 
 \section{Programa Principal}
-Implementar una aplicación de consola que le permita al usuario especificar un archivo de texto, compuesto por todo tipo de caracteres, a partir del cual se debe contabilizar la cantidad de apariciones de cada palabra en el archivo. Se considerá como palabra, a toda secuencia de caracteres $S$, tal que:
+Implementar una aplicación de consola que, recibiendo como argumento por línea de comandos el nombre de un archivo de texto, compuesto por todo tipo de caracteres, contabilice la cantidad de apariciones de cada palabra en el archivo. Se considerá como palabra, a toda secuencia de caracteres $S$, tal que:
 \begin{center}
 $S=<c_1,\dots,c_n>, n>0$\\
 $c_i \in \{$a,\dots,z$\} \cup \{$á,é,í,ó,ú$\}, \forall{i} (0<i<=n)$.
 \end{center}
 
-El programa debe ofrecer un menú de operaciones, con las que el usuario puede consultar y manipular el estado del trie:
+El programa debe ofrecer un menú de operaciones, con las que el usuario luego puede consultar y manipular el estado del trie:
 \begin{enumerate}	
-	\item \textbf{Iniciar:} permite la creación de un nuevo trie, a partir del ingreso de un nombre de archivo de texto.
-	
 	\item \textbf{Mostrar palabras:} permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
 	
 	\item \textbf{Consultar:} permite determinar si una dada palabra ingresada pertenece o no al archivo, y en consecuencia, cuántas veces esta se repite en el archivo.
@@ -127,13 +160,12 @@ El programa debe ofrecer un menú de operaciones, con las que el usuario puede c
 
 	\item \textbf{Porcentaje prefijo:} dado un prefijo, indica el porcentaje de palabras del trie que comienzan con él. 
 	
-	\item \textbf{Salir:} permite salir del programa.
+	\item \textbf{Salir:} permite salir del programa, liberando toda la memoria utilizada por el trie.
 \end{enumerate}
 	
 \section*{Sobre la implementación}
 \begin{itemize}
-	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}, \textsf{trie.c} y \textsf{main.c}}
-	respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
+	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}}, \textbf{\textsf{lista\_ord.c}, \textsf{trie.c} y \textsf{main.c}} respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h}, \textbf{\textsf{lista\_ord.c}} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
 	
 	\item Es importante que durante la implementación del proyecto se haga un uso
 	cuidadoso y eficiente de la memoria, tanto para la reservar
@@ -158,8 +190,6 @@ El programa debe ofrecer un menú de operaciones, con las que el usuario puede c
 	\item El código debe estar indentado, comentado, y debe reflejar el uso adecuado de nombres significativos para la definición de variables, funciones y parámetros.
 	
 \end{itemize}
-
-\pagebreak
 
 \section*{Sobre la documentación}
 
