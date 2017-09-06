@@ -20,14 +20,14 @@ Con este objetivo, se debe implementar:
 	
 	\item El TDA Lista Ordenada, que haciendo uso del TDA Lista definido anteriormente, almacene elementos de tipo genérico pero de forma ordenada. Para esto, hará uso de un comparador diseñado para comparar dichos elementos.
 	
-	\item El TDA Trie, que almacena cadena de caracteres y un contador asociado a cada cadena, y que permite recuperar fácilmente tanto palabras como su correspondiente contador.
+	\item El TDA Trie, que almacena cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
 	
 	\item Un programa principal, el cual debe tomar como argumento por línea de comandos el nombre de un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del trie.
 	
 \end{itemize}
 
 \section{TDA Lista}
-Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos. La lista debe ser simplemente enlazada sin centinelas. La implementación debe proveer las operaciones:
+Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos. La lista debe ser simplemente enlazada sin centinelas, cuya implementación provea las siguientes operaciones:
 
 \begin{enumerate}
 	
@@ -91,7 +91,7 @@ Implementar un TDA Lista Ordenada en lenguaje C, haciendo uso del TDA Lista, cuy
 	
 \end{enumerate}
 
-En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista\_ord}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
 
 Para la implementación, se debe considerar que \texttt{TListaOrd} está definido de la siguiente manera:
 
@@ -142,7 +142,7 @@ typedef struct nodo {
 \end{verbatim}
 
 \section{Programa Principal}
-Implementar una aplicación de consola que, recibiendo como argumento por línea de comandos el nombre de un archivo de texto, compuesto por todo tipo de caracteres, contabilice la cantidad de apariciones de cada palabra en el archivo. Se considerá como palabra, a toda secuencia de caracteres $S$, tal que:
+Implementar una aplicación de consola que, recibiendo como argumento por línea de comandos el nombre de un archivo de texto, compuesto por todo tipo de caracteres, contabilice la cantidad de apariciones de cada palabra en el archivo. Se considerará como palabra toda secuencia de caracteres $S$, tal que:
 \begin{center}
 $S=<c_1,\dots,c_n>, n>0$\\
 $c_i \in \{$a,\dots,z$\} \cup \{$á,é,í,ó,ú$\}, \forall{i} (0<i<=n)$.
