@@ -13,16 +13,16 @@
 \section*{Propósito}
 El objetivo principal del proyecto, es implementar en lenguaje C un programa que registre la frecuencia de aparición de palabras que forman parte de un archivo de texto. 
 
-Con este objetivo, se debe implementar:
+Con este objetivo se debe implementar:
 \begin{itemize}
 	
-	\item El TDA Lista, que almacene elementos de tipo genérico, y manipula la misma a través del concepto de posición.
+	\item El TDA Lista, para almacenar elementos de tipo genérico.
 	
 	\item El TDA Lista Ordenada, que haciendo uso del TDA Lista definido anteriormente, almacene elementos de tipo genérico pero de forma ordenada. Para esto, hará uso de un comparador diseñado para comparar dichos elementos.
 	
-	\item El TDA Trie, que almacena cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
+	\item El TDA Trie, para almacenar cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
 	
-	\item Un programa principal, el cual debe tomar como argumento por línea de comandos el nombre de un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del trie.
+	\item Un programa principal, el cual debe tomar como argumento por línea de comandos el nombre de un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del Trie.
 	
 \end{itemize}
 
@@ -33,7 +33,7 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 	
 	\item \texttt{TLista crear\_lista()} Crea y retorna una lista vacía.
 	
-	\item \texttt{int insertar(TLista lista, TPosicion pos, void* elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{NULL}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int insertar(TLista lista, TPosicion pos, TElemento elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{NULL}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
 	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
@@ -45,7 +45,7 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 	
 	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{void* recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{TElemento recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
 
 	\item \texttt{int size(TLista lista)} Retorna la cantidad de elementos de la lista.	
 	
@@ -53,7 +53,7 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 
 En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
 
-Para la implementación, se debe considerar que los tipos \texttt{TLista}, \texttt{TCelda} y \texttt{TPosicion}, están definidos de la siguiente manera:
+Para la implementación, se debe considerar que los tipos \texttt{TLista}, \texttt{TCelda},  \texttt{TElemento} y \texttt{TPosicion}, están definidos de la siguiente manera:
 
 \begin{verbatim}
 typedef struct lista {
@@ -62,11 +62,12 @@ typedef struct lista {
 } * TLista;
 
 typedef struct celda {
-  void * elemento;
+  TElemento elemento;
   struct celda * proxima_celda;
 } * TCelda;
 
 typedef struct celda * TPosicion;
+typedef X * TElemento; (X representa el tipo de dato de los elementos de la lista)
 
 \end{verbatim}
 
@@ -75,31 +76,31 @@ Implementar un TDA Lista Ordenada en lenguaje C, haciendo uso del TDA Lista, cuy
 
 \begin{enumerate}
 	
-	\item \texttt{TListaOrd crear\_lista\_ord(int (*f)(void*,void*))} Crea y retorna una lista ordenada vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	\item \texttt{TListaOrdenada crear\_lista\_ordenada(int (*f)(void*,void*))} Crea y retorna una lista ordenada vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
 	
-	\item \texttt{int insertar(TListaOrd lista,  void* elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada de forma ascendente. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int insertar(TListaOrdenada lista,  TElemento elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada de forma ascendente. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(TListaOrd lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{int eliminar(TListaOrdenada lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int size(TListaOrd lista)} Retorna la cantidad de elementos de la lista.
+	\item \texttt{int size(TListaOrdenada lista)} Retorna la cantidad de elementos de la lista.
 	
-	\item \texttt{void* primera(TListaOrd lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{TPosicion primera(TListaOrdenada lista)} Retorna la primer posición de la lista.
 	
-	\item \texttt{TPosicion ultima(TListaOrd lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{TPosicion ultima(TListaOrdenada lista)} Retorna la última posición de la lista.
 
-	\item \texttt{TPosicion siguiente(TListaOrd lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{TPosicion siguiente(TListaOrdenada lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista.
 	
 \end{enumerate}
 
-En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista\_ord}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista\_ordenada}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
 
-Para la implementación, se debe considerar que \texttt{TListaOrd} está definido de la siguiente manera:
+Para la implementación, se debe considerar que \texttt{TListaOrdenada} está definido de la siguiente manera:
 
 \begin{verbatim}
 typedef struct lista_ordenada {
   unsigned int cantidad_elementos;
   TLista lista;
-} * TListaOrd;
+} * TListaOrdenada;
 \end{verbatim}
 
 \section{TDA Trie}
@@ -136,7 +137,7 @@ typedef struct nodo {
   char rotulo;
   unsigned int contador;
   struct nodo * padre;
-  TListaOrd hijos;
+  TListaOrdenada hijos;
 } * TNodo;
 
 \end{verbatim}
@@ -148,7 +149,7 @@ $S=<c_1,\dots,c_n>, n>0$\\
 $c_i \in \{$a,\dots,z$\} \cup \{$á,é,í,ó,ú$\}, \forall{i} (0<i<=n)$.
 \end{center}
 
-El programa debe ofrecer un menú de operaciones, con las que el usuario luego puede consultar y manipular el estado del trie:
+El programa debe ofrecer un menú de operaciones, con las que el usuario luego puede consultar y manipular el estado del Trie:
 \begin{enumerate}	
 	\item \textbf{Mostrar palabras:} permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
 	
@@ -160,12 +161,12 @@ El programa debe ofrecer un menú de operaciones, con las que el usuario luego p
 
 	\item \textbf{Porcentaje prefijo:} dado un prefijo, indica el porcentaje de palabras del trie que comienzan con él. 
 	
-	\item \textbf{Salir:} permite salir del programa, liberando toda la memoria utilizada por el trie.
+	\item \textbf{Salir:} permite salir del programa, liberando toda la memoria utilizada por el Trie.
 \end{enumerate}
 	
 \section*{Sobre la implementación}
 \begin{itemize}
-	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}}, \textbf{\textsf{lista\_ord.c}, \textsf{trie.c} y \textsf{main.c}} respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h}, \textbf{\textsf{lista\_ord.c}} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
+	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}}, \textbf{\textsf{lista\_ordenada.c}, \textsf{trie.c} y \textsf{main.c}} respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h}, \textbf{\textsf{lista\_ordenada.h}} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
 	
 	\item Es importante que durante la implementación del proyecto se haga un uso
 	cuidadoso y eficiente de la memoria, tanto para la reservar
