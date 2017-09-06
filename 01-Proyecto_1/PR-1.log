@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.5)  6 SEP 2017 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.5)  6 SEP 2017 19:25
 entering extended mode
 **./PR-1.tex
 (PR-1.tex
@@ -587,12 +587,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--55
 
  []
 
-
-Overfull \hbox (22.65341pt too wide) in paragraph at lines 72--72
-[]\OT1/cmtt/m/n/12 typedef X * TElemento; (X representa el tipo de dato de los 
-elementos de la lista)[] 
- []
-
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
@@ -657,7 +651,7 @@ cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PR-1.pdf (6 pages, 177739 bytes).
+Output written on PR-1.pdf (6 pages, 177518 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
