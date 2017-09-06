@@ -18,9 +18,9 @@ Con este objetivo se debe implementar:
 	
 	\item El TDA Lista, para almacenar elementos de tipo genérico.
 	
-	\item El TDA Lista Ordenada, que haciendo uso del TDA Lista definido anteriormente, almacene elementos de tipo genérico pero de forma ordenada. Para esto, hará uso de un comparador diseñado para comparar dichos elementos.
+	\item El TDA Lista Ordenada haciendo uso del TDA Lista deberá permitir almacenar elementos en forma ordenada. Para esto, hará uso de una función diseñada para comparar dichos elementos.
 	
-	\item El TDA Trie, para almacenar cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
+	\item El TDA Trie para almacenar cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
 	
 	\item Un programa principal, el cual debe tomar como argumento por línea de comandos el nombre de un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del Trie.
 	
@@ -33,19 +33,19 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 	
 	\item \texttt{TLista crear\_lista()} Crea y retorna una lista vacía.
 	
-	\item \texttt{int insertar(TLista lista, TPosicion pos, TElemento elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{NULL}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int insertar(TLista lista, TPosicion pos, TElemento elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{POS\_NULA}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, retornar \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{TPosicion primera(TLista lista)} Retorna la primer posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{TPosicion primera(TLista lista)} Retorna la primer posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
 	
-	\item \texttt{TPosicion ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía, aborta con \emph{exit status} \texttt{LST\_VAC}.
+	\item \texttt{TPosicion ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía, retornar \texttt{POS\_NULA}.
 	
-	\item \texttt{TPosicion anterior(TLista lista, TPosicion pos)} Retorna la posición anterior a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la primer posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{TPosicion anterior(TLista lista, TPosicion pos)} Retorna la posición anterior a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la primer posición de la lista, retornar \texttt{POS\_NULA} .
 	
-	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista, o una posición inválida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista o una posición inválida, retorna \texttt{POS\_NULA}.
 	
-	\item \texttt{TElemento recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición no es válida, aborta con \emph{exit status} \texttt{LST\_POS\_INV}.
+	\item \texttt{TElemento recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición es \texttt{POS\_NULA} , retornar \texttt{ELE\_NULO}.
 
 	\item \texttt{int size(TLista lista)} Retorna la cantidad de elementos de la lista.	
 	
@@ -76,7 +76,7 @@ Implementar un TDA Lista Ordenada en lenguaje C, haciendo uso del TDA Lista, cuy
 
 \begin{enumerate}
 	
-	\item \texttt{TListaOrdenada crear\_lista\_ordenada(int (*f)(void*,void*))} Crea y retorna una lista ordenada vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void*,void*)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
+	\item \texttt{TListaOrdenada crear\_lista\_ordenada(int (*f)(void *,void *))} Crea y retorna una lista ordenada vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void *,void *)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
 	
 	\item \texttt{int insertar(TListaOrdenada lista,  TElemento elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada de forma ascendente. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
@@ -255,7 +255,9 @@ Se considerarán los siguientes valores para las constantes definidas en las esp
 			\texttt{LST\_POS\_INV} \\
 			\texttt{LST\_VAC} \\
 			\texttt{TRI\_NO\_INI} \\
-			\texttt{STR\_NO\_PER}
+			\texttt{STR\_NO\_PER}\\
+			\texttt{POS\_NULA}\\
+			\texttt{ELE\_NULO}
 	\end{minipage} &
 	\begin{minipage}[t]{0.1\textwidth}
 			\textbf{\emph{Valor}} \\
@@ -266,6 +268,8 @@ Se considerarán los siguientes valores para las constantes definidas en las esp
 			\texttt{4} \\
 			\texttt{5} \\
 			\texttt{-1} \\
+			\texttt{NULL} \\
+			\texttt{NULL} \\
 	\end{minipage} &
 	\begin{minipage}[t]{0.65\textwidth}
 		\textbf{\emph{Significado}}\\
