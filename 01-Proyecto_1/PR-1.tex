@@ -16,11 +16,11 @@ El objetivo principal del proyecto, es implementar en lenguaje C un programa que
 Con este objetivo se debe implementar:
 \begin{itemize}
 	
-	\item El TDA Lista, para almacenar elementos de tipo genérico.
+	\item TDA Lista, para almacenar elementos de tipo genérico.
 	
-	\item El TDA Lista Ordenada haciendo uso del TDA Lista deberá permitir almacenar elementos en forma ordenada. Para esto, hará uso de una función diseñada para comparar dichos elementos.
+	\item TDA Lista Ordenada, el cual haciendo uso del TDA Lista deberá permitir almacenar elementos en forma ordenada. El orden de los elementos será determinado por una función diseñada específicamente para ese propósito. 
 	
-	\item El TDA Trie para almacenar cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
+	\item TDA Trie, para almacenar cadenas de caracteres junto con un contador asociado a cada cadena. Permite recuperar fácilmente tanto palabras como su correspondiente contador. 
 	
 	\item Un programa principal, el cual debe tomar como argumento por línea de comandos el nombre de un archivo de texto, recorrer el mismo, calcular la frecuencia de aparición de las palabras que lo componen y ofrecer un conjunto de operaciones de consulta y manipulación del Trie.
 	
@@ -35,17 +35,17 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 	
 	\item \texttt{int insertar(TLista lista, TPosicion pos, TElemento elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{POS\_NULA}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida, retornar \texttt{LST\_POS\_INV}.
+	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida retornar \texttt{LST\_POS\_INV}.
 	
 	\item \texttt{TPosicion primera(TLista lista)} Retorna la primer posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
 	
-	\item \texttt{TPosicion ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía, retornar \texttt{POS\_NULA}.
+	\item \texttt{TPosicion ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
 	
 	\item \texttt{TPosicion anterior(TLista lista, TPosicion pos)} Retorna la posición anterior a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la primer posición de la lista, retornar \texttt{POS\_NULA} .
 	
-	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista o una posición inválida, retorna \texttt{POS\_NULA}.
+	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista o \texttt{POS\_NULA}, retorna \texttt{POS\_NULA}.
 	
-	\item \texttt{TElemento recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición es \texttt{POS\_NULA} , retornar \texttt{ELE\_NULO}.
+	\item \texttt{TElemento recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición es \texttt{POS\_NULA}, retornar \texttt{ELE\_NULO}.
 
 	\item \texttt{int size(TLista lista)} Retorna la cantidad de elementos de la lista.	
 	
@@ -257,7 +257,7 @@ Se considerarán los siguientes valores para las constantes definidas en las esp
 			\texttt{TRI\_NO\_INI} \\
 			\texttt{STR\_NO\_PER}\\
 			\texttt{POS\_NULA}\\
-			\texttt{ELE\_NULO}
+			\texttt{ELE\_NULO}\\
 	\end{minipage} &
 	\begin{minipage}[t]{0.1\textwidth}
 			\textbf{\emph{Valor}} \\
@@ -280,6 +280,8 @@ Se considerarán los siguientes valores para las constantes definidas en las esp
 		 Intento de acceso inválido sobre lista vacía.\\
 		 Iintento de acceso inválido sobre trie sin inicializar.\\			
 		 String no perteneciente a trie.\\
+		Posición nula.\\
+		Elemento nulo.\\
 	\end{minipage}
 \end{tabular}	
 
