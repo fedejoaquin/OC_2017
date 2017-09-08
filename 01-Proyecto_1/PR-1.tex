@@ -51,9 +51,9 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 	
 \end{enumerate}
 
-En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}.
 
-Para la implementación, se debe considerar que los tipos \texttt{TLista}, \texttt{TCelda},  \texttt{TElemento} y \texttt{TPosicion}, están definidos de la siguiente manera:
+Para la implementación, se debe considerar que los tipos \texttt{TLista}, \texttt{TCelda}, \texttt{TPosicion} y \texttt{TElemento}, están definidos de la siguiente manera:
 
 \begin{verbatim}
 typedef struct lista {
@@ -92,7 +92,7 @@ Implementar un TDA Lista Ordenada en lenguaje C, haciendo uso del TDA Lista, cuy
 	
 \end{enumerate}
 
-En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista\_ordenada}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}. \\
+En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_lista\_ordenada}, si la lista parametrizada no está inicializada, se debe abortar con \emph{exit status} \texttt{LST\_NO\_INI}.
 
 Para la implementación, se debe considerar que \texttt{TListaOrdenada} está definido de la siguiente manera:
 
@@ -125,6 +125,8 @@ Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{
 
 En los casos anteriormente indicados, sin considerar la operación \texttt{crear\_trie}, si el trie parametrizado no está inicializado, se debe abortar con \emph{exit status} \texttt{TRI\_NO\_INI}. \\
 
+\pagebreak
+
 Para la implementación, se deben considerar que los tipos \texttt{TTrie} y \texttt{TNodo} están definidos de la siguiente manera:
 
 \begin{verbatim}
@@ -153,7 +155,7 @@ El programa debe ofrecer un menú de operaciones, con las que el usuario luego p
 \begin{enumerate}	
 	\item \textbf{Mostrar palabras:} permite visualizar el listado de todas las palabras junto con la cantidad de apariciones de la misma.
 	
-	\item \textbf{Consultar:} permite determinar si una dada palabra ingresada pertenece o no al archivo, y en consecuencia, cuántas veces esta se repite en el archivo.
+	\item \textbf{Consultar:} permite determinar si una palabra ingresada pertenece o no al archivo, y en consecuencia, cuántas veces esta se repite en el archivo.
 	
 	\item \textbf{Comienzan con:} permite consultar cuántas palabras comienzan con una letra dada.
 	
@@ -163,10 +165,18 @@ El programa debe ofrecer un menú de operaciones, con las que el usuario luego p
 	
 	\item \textbf{Salir:} permite salir del programa, liberando toda la memoria utilizada por el Trie.
 \end{enumerate}
+
+El programa implementado, denominado \texttt{evaluador}, debe conformar la siguiente especificación al ser invocado desde la línea de comandos:
+
+\begin{center}	
+	\texttt{\$ evaluador <archivo\_texto> }
+\end{center}
+
+El parámetro \texttt{archivo\_texto}, indica el archivo a partir del cual se contabilizará la frecuencia de aparición de las palabras que lo componen. En caso de ingresar un parámetro erróneo, se debe mostrar un mensaje indicando el error, y finalizar la ejecución.
 	
 \section*{Sobre la implementación}
 \begin{itemize}
-	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}}, \textbf{\textsf{lista\_ordenada.c}, \textsf{trie.c} y \textsf{main.c}} respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h}, \textbf{\textsf{lista\_ordenada.h}} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
+	\item Los archivos fuente principales se deben denominar \textbf{\textsf{lista.c}}, \textbf{\textsf{lista\_ordenada.c}, \textsf{trie.c} y \textsf{evaluador.c}} respectivamente. En el caso de las librerías, también se deben adjuntar los respectivos archivos de encabezados \textbf{\textsf{lista.h}, \textbf{\textsf{lista\_ordenada.h}} y \textsf{trie.h}}, los cuales han de	ser incluidos en los archivos fuente de los programas que hagan uso de las mismas.
 	
 	\item Es importante que durante la implementación del proyecto se haga un uso
 	cuidadoso y eficiente de la memoria, tanto para la reservar
@@ -228,7 +238,7 @@ Toda comisión que no cumpla con los requerimientos, estará automáticamente de
 		\textit{Apellido, Nombre 2 - LU 2}
 	\end{itemize}
 	
-	\item El e-mail debe ser enviado con anterioridad al día \textbf{Martes 10 de Octubre de 2017}, a las \textbf{22:00 hs}. Se considerará como hora de ingreso, la registrada en el servidor de e-mail del DCIC.
+	\item El e-mail debe ser enviado con anterioridad al día \textbf{Martes 10 de Octubre de 2017, 22:00 hs}. Se considerará como hora de ingreso, la registrada en el servidor de e-mail del DCIC.
 		
 \end{itemize}
 
@@ -242,6 +252,8 @@ Toda comisión que no cumpla con los requerimientos, estará automáticamente de
 	\item Tanto para compilar el proyecto, como para verificar su funcionamiento, se utilizará la máquina virtual “OCUNS” publicada en el sitio web de la cátedra.
 	
 \end{itemize}
+
+\pagebreak
 
 \section*{Sobre las constantes a utilizar}
 Se considerarán los siguientes valores para las constantes definidas en las especificaciones de las operaciones del proyecto: \\

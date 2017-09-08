@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.5)  6 SEP 2017 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.5)  8 SEP 2017 11:19
 entering extended mode
 **./PR-1.tex
 (PR-1.tex
@@ -583,62 +583,63 @@ n/12 Re-tor-na el ele-men-to co-rres-pon-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
-
+Overfull \hbox (9.65652pt too wide) in paragraph at lines 79--80
+[]\OT1/cmtt/m/n/12 TListaOrdenada crear[]lista[]ordenada(int (*f)(void *,void *
+)) \OT1/cmr/m/n/12 Crea y re-tor-na una
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
 [3] [4] [5]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 218.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 228.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 218.
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 261--269
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 228.
+ [6]
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--279
+Underfull \hbox (badness 10000) in paragraph at lines 263--273
 
  []
 
 
-Overfull \hbox (53.6248pt too wide) in paragraph at lines 249--281
+Underfull \hbox (badness 10000) in paragraph at lines 275--285
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--297
+
+ []
+
+
+Overfull \hbox (53.6248pt too wide) in paragraph at lines 261--299
 [][] 
  []
 
-[6] (PR-1.aux
+[7] (PR-1.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 3410 strings out of 493333
- 43398 string characters out of 3139162
- 120430 words of memory out of 3000000
- 6873 multiletter control sequences out of 15000+200000
+ 3418 strings out of 493333
+ 43509 string characters out of 3139162
+ 119430 words of memory out of 3000000
+ 6881 multiletter control sequences out of 15000+200000
  9111 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,43p,484b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,16n,43p,489b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/
@@ -651,9 +652,9 @@ cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on PR-1.pdf (6 pages, 177518 bytes).
+Output written on PR-1.pdf (7 pages, 179227 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
