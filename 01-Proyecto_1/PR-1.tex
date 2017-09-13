@@ -33,21 +33,21 @@ Implementar un TDA Lista en lenguaje C, cuyos elementos sean punteros genéricos
 	
 	\item \texttt{TLista crear\_lista()} Crea y retorna una lista vacía.
 	
-	\item \texttt{int insertar(TLista lista, TPosicion pos, TElemento elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{POS\_NULA}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int l\_insertar(TLista lista, TPosicion pos, TElemento elem)} Agrega el elemento \texttt{elem} en la posición anterior a \texttt{pos}, dentro de la lista. Si \texttt{pos} es \texttt{POS\_NULA}, inserta el elemento en la primer posición de la lista. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida retornar \texttt{LST\_POS\_INV}.
+	\item \texttt{int l\_eliminar(TLista lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente. Retorna verdadero si procede con éxito, falso en caso contrario. Si la posición no es válida retornar \texttt{LST\_POS\_INV}.
 	
-	\item \texttt{TPosicion primera(TLista lista)} Retorna la primer posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
+	\item \texttt{TPosicion l\_primera(TLista lista)} Retorna la primer posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
 	
-	\item \texttt{TPosicion ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
+	\item \texttt{TPosicion l\_ultima(TLista lista)} Retorna la última posición de la lista. Si la lista es vacía retornar \texttt{POS\_NULA}.
 	
-	\item \texttt{TPosicion anterior(TLista lista, TPosicion pos)} Retorna la posición anterior a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la primer posición de la lista, retornar \texttt{POS\_NULA} .
+	\item \texttt{TPosicion l\_anterior(TLista lista, TPosicion pos)} Retorna la posición anterior a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la primer posición de la lista, retornar \texttt{POS\_NULA} .
 	
-	\item \texttt{TPosicion siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista o \texttt{POS\_NULA}, retorna \texttt{POS\_NULA}.
+	\item \texttt{TPosicion l\_siguiente(TLista lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista \texttt{lista}. Si \texttt{pos} es la última posición de la lista o \texttt{POS\_NULA}, retorna \texttt{POS\_NULA}.
 	
-	\item \texttt{TElemento recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición es \texttt{POS\_NULA}, retornar \texttt{ELE\_NULO}.
+	\item \texttt{TElemento l\_recuperar(TLista lista, TPosicion pos)} Retorna el elemento correspondiente a la posición \texttt{pos}. Si la posición es \texttt{POS\_NULA}, retornar \texttt{ELE\_NULO}.
 
-	\item \texttt{int size(TLista lista)} Retorna la cantidad de elementos de la lista.	
+	\item \texttt{int l\_size(TLista lista)} Retorna la cantidad de elementos de la lista.	
 	
 \end{enumerate}
 
@@ -78,17 +78,17 @@ Implementar un TDA Lista Ordenada en lenguaje C, haciendo uso del TDA Lista, cuy
 	
 	\item \texttt{TListaOrdenada crear\_lista\_ordenada(int (*f)(void *,void *))} Crea y retorna una lista ordenada vacía. El orden de los elementos insertados estará dado por la función de comparación \texttt{int f(void *,void *)}. Se considera que la función \texttt{f} devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo.
 	
-	\item \texttt{int insertar(TListaOrdenada lista,  TElemento elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada de forma ascendente. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int lo\_insertar(TListaOrdenada lista,  TElemento elem)} Agrega el elemento \texttt{elem} en la posición correspondiente de la lista, de modo que la misma quede siempre ordenada de forma ascendente. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int eliminar(TListaOrdenada lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario.
+	\item \texttt{int lo\_eliminar(TListaOrdenada lista, TPosicion pos)} Elimina el elemento en la posición \texttt{pos}. Reacomoda la lista adecuadamente al eliminar en posiciones intermedias. Retorna verdadero si procede con éxito, falso en caso contrario.
 	
-	\item \texttt{int size(TListaOrdenada lista)} Retorna la cantidad de elementos de la lista.
+	\item \texttt{int lo\_size(TListaOrdenada lista)} Retorna la cantidad de elementos de la lista.
 	
-	\item \texttt{TPosicion primera(TListaOrdenada lista)} Retorna la primer posición de la lista.
+	\item \texttt{TPosicion lo\_primera(TListaOrdenada lista)} Retorna la primer posición de la lista.
 	
-	\item \texttt{TPosicion ultima(TListaOrdenada lista)} Retorna la última posición de la lista.
+	\item \texttt{TPosicion lo\_ultima(TListaOrdenada lista)} Retorna la última posición de la lista.
 
-	\item \texttt{TPosicion siguiente(TListaOrdenada lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista.
+	\item \texttt{TPosicion lo\_siguiente(TListaOrdenada lista, TPosicion pos)} Retorna la posición siguiente a \texttt{pos} en la lista.
 	
 \end{enumerate}
 
@@ -111,15 +111,15 @@ Implementar un TDA Trie en lenguaje C, cuyos nodos tienen como rótulo un \emph{
 	
 	\item \texttt{TTrie crear\_trie()} Retorna un nuevo trie vacío, esto es, con nodo raíz que mantiene rótulo nulo y contador en cero.
 	
-	\item \texttt{int insertar(TTrie tr, char* str)} Inserta el string \texttt{str} en el trie, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción fue exitosa, falso en caso de que el string ya perteneciera al trie.
+	\item \texttt{int tr\_insertar(TTrie tr, char* str)} Inserta el string \texttt{str} en el trie, inicializando el valor de contador asociado en uno. En caso de que el string ya se encuentre representado en el trie, aumenta el valor del contador asociado a dicho string en una unidad. Retorna verdadero si la inserción fue exitosa, falso en caso de que el string ya perteneciera al trie.
 
-	\item \texttt{int pertenece(TTrie tr, char* str)} Retorna verdadero si el string \texttt{srt} pertenece al trie, falso en caso contrario.
+	\item \texttt{int tr\_pertenece(TTrie tr, char* str)} Retorna verdadero si el string \texttt{srt} pertenece al trie, falso en caso contrario.
 	
-	\item \texttt{int recuperar(TTrie tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie. Si el string no pertenece al trie, retorna \texttt{STR\_NO\_PER}.
+	\item \texttt{int tr\_recuperar(TTrie tr, char* str)} Retorna el entero asociado al string \texttt{str}, dentro del trie. Si el string no pertenece al trie, retorna \texttt{STR\_NO\_PER}.
 
-	\item \texttt{int size(TTrie tr)} Retorna la cantidad de palabras almacenadas en el trie.
+	\item \texttt{int tr\_size(TTrie tr)} Retorna la cantidad de palabras almacenadas en el trie.
 	
-	\item \texttt{int eliminar(TTrie tr, char* str)} Elimina el string \texttt{str} dentro del trie, liberando la memoria utilizada. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
+	\item \texttt{int tr\_eliminar(TTrie tr, char* str)} Elimina el string \texttt{str} dentro del trie, liberando la memoria utilizada. Retorna verdadero en caso de operación exitosa, y falso en caso contrario.
 		
 \end{enumerate}
 
