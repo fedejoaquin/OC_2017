@@ -15,7 +15,7 @@
 
 \PEjercicio{1}Dado el número \textbf{decimal} $-298.5625$ llevar adelante los siguientes cambios de base:
 \begin{enumerate}[a)]
-	\item Convertirlo a \textbf{octal}, empleando el método de la \textbf{división} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base}, con 4 dígitos decimales para la parte entera y 6 para la parte fraccionaria.
+	\item Convertirlo a \textbf{octal}, empleando el método de la \textbf{división} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base}, con 4 dígitos octales para la parte entera y 6 para la parte fraccionaria.
 
 	\item Convertirlo a \textbf{binario} utilizando el método de la \textbf{multiplicación} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base disminuida}, con 12 bits para la parte entera y 6 bits para la parte fraccionaria.
 \end{enumerate}
@@ -52,6 +52,28 @@
 	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=3$, $c=0$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $1010$.
 \end{enumerate}
 
+\PEjercicio{5} Dadas las siguientes declaraciones de tipos:
+\begin{verbatim}
+	typedef void * tElemento;
+	typedef struct nodo{
+	   tElemento elemento;
+	   struct nodo * padre;
+	   struct nodo * hijo_izq;
+	   struct nodo * hijo_der;
+	} * tNodo;
+	typedef struct abb{
+	   unsigned int cant_elementos;
+	   struct nodo * raiz;
+	} * tABB;
+\end{verbatim}
+Implementar en lenguaje C, ACÁ DEBERÍAMOS SELECCIONAR ALGUNA DE LAS SIGUIENTES OPCIONES y la otra la podemos dejar para el RECU :) 
+\begin{itemize}
+	\item una función \texttt{void insertar(tABB a, tElemento e, int (*f)(void *,void *))}, que dado un \emph{Árbol Binario de Búsqueda} y una función de comparación \texttt{f}, inserte el elemento \texttt{e} en su correspondiente ubicación, haciendo un correcto uso de la memoria dinámica. Se considera que la función \texttt{f}, devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo. \textbf{Deben hacer uso de malloc al crear un nuevo nodo, y moverse sobre la ED haciendo uso del comparador.}
+\end{itemize}
+
+\begin{itemize}
+	\item una función \texttt{void eliminar\_raiz(tABB a, tElemento e, int (*f)(void *,void *))}, que dado un \emph{Árbol Binario de Búsqueda}, elimine el elemento almacenado en el nodo raíz del árbol, y reacomode la estructura tABB de forma tal que siga representando un árbol binario de búsqueda. \textbf{Deben hacer uso de free al eliminar un nodo hoja que pasa a ser nueva raiz, y moverse sobre la ED.}
+\end{itemize}  
 
 \end{document}
 
