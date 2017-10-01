@@ -31,27 +31,29 @@
 
 \begin{enumerate}[a)]
 	\item Construir el mensaje $T(x)$ a transmitir asociado al mensaje de datos
-	$M(x) = 110\,1011\,1011$ empleando el polinomio generador $G(x) = x^3 + x^2 + 1$.
+	$M(x) = 110\,1011\,1011$ empleando el polinomio generador $G(x) = x^4 + x + 1$.
 
-	\item Suponiendo que durante la transmisión el mensaje $T(x)$ es modificado con un error $E(x)$ de tal forma que el receptor recibe el mensaje $T'(x) = 110\,0011\,0011\,0010$, determinar cómo opera el mecanismo de detección de errores y cuál es la conclusión que se alcanza.
+	\item Suponiendo que durante la transmisión el mensaje $T(x)$ es modificado con un error $E(x)$ de tal forma que el receptor recibe el mensaje $T'(x) = 110\,\, 0011\,0011\,1011$, determinar cómo opera el mecanismo de detección de errores y cuál es la conclusión que se alcanza.
 
 	\item Comparando el mensaje transmitido $T(x)$ y el mensaje recibido $T'(x)$, ¿cuál es el desarrollo del polinomio de error $E(x)$? Sabiendo cuál fue el error exacto que existió, ¿cuál es la longitud de la ráfaga en error? y ¿a qué conclusión se puede arribar?
 \end{enumerate}
 
 
-\PEjercicio{4} Considerando el código Hamming mínima distancia 3 (Hamming básico), empleando paridad par y estando la secuencia ordenada de izquierda a derecha:
+\PEjercicio{4} Considerando el código Hamming mínima distancia 4 (Hamming extendido), empleando paridad par y estando la secuencia ordenada de izquierda a derecha:
 
 \begin{enumerate}[a)]
 
-	\item Calcular los bits de código asociados al dato $0110\,1011$ y armar el codeword correspondiente que integra el dato y los bits calculados. 
+	\item Calcular los bits de código asociados al dato $0110\,1011$ y armar el codeword correspondiente que integra el dato y los bits calculados. ¿Cuántos bits de código se tienen que completar?. Justifique su respuesta. 
 
-	\item Considerando que el receptor recibe el codeword $1011\,1101\,1001$ que contiene los bits de dato y de código $C_i$. Recalcular los bits de código y determinar cuál es el síndrome.
+	\item Considerando que el receptor recibe el codeword $1\,0111\,1011\,0110$ que contiene los bits de dato y de código $C_i$. Recalcular los bits de código y determinar cuál es el síndrome.
 
-	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=2$, $c=1$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $1110$.
+	\item Determinar cómo trabaja el mecanismo de detección/corrección ante una política $d=2$, $c=1$, con los resultados obtenidos en el inciso b).
 
-	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=3$, $c=0$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $1010$.
+	\item Determinar cómo trabaja el mecanismo de detección/corrección ante una política $d=3$, $c=0$, si el síndrome fuera $1110$.
 
-	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=3$, $c=0$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $0000$.
+	\item Determinar cómo trabaja el mecanismo de detección/corrección ante una política $d=2$, $c=1$, si el síndrome fuera $0000$.
+
+%	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=3$, $c=0$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $0000$.
 
 \end{enumerate}
 
