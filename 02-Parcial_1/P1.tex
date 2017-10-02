@@ -40,7 +40,7 @@
 \PEjercicio{4} Considerando el código Hamming mínima distancia 4 (Hamming extendido), empleando paridad par y estando la secuencia ordenada de izquierda a derecha:
 \begin{enumerate}[a)]
 
-	\item Calcular los bits de código asociados al dato $0110\,1011$ y armar el codeword correspondiente que integra el dato y los bits calculados. ¿Cuántos bits de código se tienen que completar?. Justifique su respuesta. 
+	\item Calcular los bits de código asociados al dato $0110\,1011$ y armar el codeword correspondiente que integra el dato y los bits calculados. ¿Cuántos bits de código se tienen que completar? Justifique su respuesta. 
 
 	\item Considerando que el receptor recibe el codeword $1\,0111\,1011\,0110$ que contiene los bits de dato y de código $C_i$. Recalcular los bits de código y determinar cuál es el síndrome.
 
@@ -54,10 +54,10 @@
 
 \end{enumerate}
 
-\PEjercicio{5} Dada la definición dada para \texttt{TCadena}, implementar en \textbf{lenguaje C}:
+\PEjercicio{5} Dada la definición para \texttt{TCadena}, implementar en \textbf{lenguaje C}:
 \begin{enumerate}[a)]
 	\item Una función \texttt{int es\_palindroma(TCadena cad)} que dada una cadena de caracteres \texttt{cad}, retorne 1 si \texttt{cad} es \textit{palíndroma}, y cero en caso contrario. Una cadena de caracteres se dice \textit{palíndroma}, si se lee de igual forma de izquierda a derecha que de derecha a izquierda. Ejemplo: ``anana'' y ``neuquen'', son cadenas \textit{palíndromas}.
-	\item Una función \texttt{TCadena[] clonar (TCadena[] arr, int long)}, que dado un arreglo de cadenas de caracteres \texttt{cad} de longitud \texttt{long}, retorne un nuevo arreglo de cadenas de igual longitud que \texttt{arr}, pero que contenga la \textit{clonación} de aquellas cadenas en \texttt{arr} que son \textit{palíndromas}. Para esto, contemplar el uso de la función definida en el inciso anterior, así como un correcto uso de la función \texttt{malloc} para reservar memoria a la hora de clonar las cadenas.
+	\item Una función \texttt{TCadena[] clonar (TCadena[] arr, int long)}, que dado un arreglo de cadenas de caracteres \texttt{arr} de longitud \texttt{long}, retorne un nuevo arreglo de cadenas de igual longitud que \texttt{arr}, pero que contenga la \textit{clonación} de aquellas cadenas en \texttt{arr} que son \textit{palíndromas}. Para esto, contemplar el uso de la función definida en el inciso anterior, así como un correcto uso de la función \texttt{malloc} para reservar memoria a la hora de clonar las cadenas.
 \end{enumerate}
 Dado un \textit{Arreglo A}, la función \texttt{clonar()} retornará un nuevo \textit{Arreglo B}, tal como se indica en la siguiente figura:\\
 \begin{centering}

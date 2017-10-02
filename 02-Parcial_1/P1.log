@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.5)  1 OCT 2017 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  2 OCT 2017 11:11
 entering extended mode
 **./P1.tex
 (P1.tex
@@ -589,8 +589,8 @@ Package epstopdf Info: Source file: <estilo/DeptoLogo.eps>
 (epstopdf)                    date: 2017-10-01 22:58:55
 (epstopdf)                    size: 31599 bytes
 (epstopdf)             Output file: <estilo/DeptoLogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-01 22:58:55
-(epstopdf)                    size: 6790 bytes
+(epstopdf)                    date: 2017-10-02 11:07:54
+(epstopdf)                    size: 6804 bytes
 (epstopdf)             Command: <epstopdf --outfile=estilo/DeptoLogo-eps-conver
 ted-to.pdf estilo/DeptoLogo.eps>
 (epstopdf)             \includegraphics on input line 10.
@@ -607,8 +607,8 @@ Package epstopdf Info: Source file: <estilo/UniLogo.eps>
 (epstopdf)                    date: 2017-10-01 22:58:55
 (epstopdf)                    size: 47107 bytes
 (epstopdf)             Output file: <estilo/UniLogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-10-01 22:58:55
-(epstopdf)                    size: 11036 bytes
+(epstopdf)                    date: 2017-10-02 11:07:55
+(epstopdf)                    size: 11050 bytes
 (epstopdf)             Command: <epstopdf --outfile=estilo/UniLogo-eps-converte
 d-to.pdf estilo/UniLogo.eps>
 (epstopdf)             \includegraphics on input line 10.
@@ -654,7 +654,7 @@ LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
  3947 strings out of 493333
- 49732 string characters out of 3139162
+ 49732 string characters out of 3139185
  130965 words of memory out of 3000000
  7391 multiletter control sequences out of 15000+200000
  9091 words of font info for 35 fonts, out of 3000000 for 9000
@@ -671,7 +671,7 @@ cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on P1.pdf (2 pages, 194954 bytes).
+Output written on P1.pdf (2 pages, 194959 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
