@@ -9,9 +9,9 @@
 
 \Examen{Primer Examen Parcial}
 
-\begin{center}
-	\emph{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares, ni calculadora. Lea todo el ejercicio antes de comenzar a desarrollarlo.}
-\end{center}
+\begin{centering}
+\emph{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares, ni calculadora. Lea todo el ejercicio antes de comenzar a desarrollarlo.}	
+\end{centering}
 
 \PEjercicio{1}Dado el número \textbf{decimal} $-298.5625$ llevar adelante los siguientes cambios de base:
 \begin{enumerate}[a)]
@@ -28,7 +28,6 @@
 \end{enumerate}
 
 \PEjercicio{3} Considerando el Código Cíclico Redundante (CRC):
-
 \begin{enumerate}[a)]
 	\item Construir el mensaje $T(x)$ a transmitir asociado al mensaje de datos
 	$M(x) = 110\,1011\,1011$ empleando el polinomio generador $G(x) = x^4 + x + 1$.
@@ -38,9 +37,7 @@
 	\item Comparando el mensaje transmitido $T(x)$ y el mensaje recibido $T'(x)$, ¿cuál es el desarrollo del polinomio de error $E(x)$? Sabiendo cuál fue el error exacto que existió, ¿cuál es la longitud de la ráfaga en error? y ¿a qué conclusión se puede arribar?
 \end{enumerate}
 
-
 \PEjercicio{4} Considerando el código Hamming mínima distancia 4 (Hamming extendido), empleando paridad par y estando la secuencia ordenada de izquierda a derecha:
-
 \begin{enumerate}[a)]
 
 	\item Calcular los bits de código asociados al dato $0110\,1011$ y armar el codeword correspondiente que integra el dato y los bits calculados. ¿Cuántos bits de código se tienen que completar?. Justifique su respuesta. 
@@ -57,26 +54,14 @@
 
 \end{enumerate}
 
-\PEjercicio{5} Dadas las siguientes declaraciones de tipos:
-\begin{verbatim}
-	typedef void * tElemento;
-	typedef struct nodo{
-	   tElemento elemento;
-	   struct nodo * padre;
-	   struct nodo * hijo_izq;
-	   struct nodo * hijo_der;
-	} * tNodo;
-	typedef struct abb{
-	   unsigned int cant_elementos;
-	   struct nodo * raiz;
-	} * tABB;
-\end{verbatim}
-Implementar en lenguaje C una función \texttt{void insertar(tABB a, tElemento e, int (*f)(void *,void *))}, que dado un \emph{Árbol Binario de Búsqueda} y una función de comparación \texttt{f}, inserte el elemento \texttt{e} en su correspondiente ubicación, haciendo un correcto uso de la memoria dinámica. Se considera que la función \texttt{f}, devuelve -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo. \textbf{Deben hacer uso de malloc al crear un nuevo nodo, y moverse sobre la \emph{estructura de datos} haciendo uso del comparador.}
-%\end{itemize}
-
-%\begin{itemize}
-%	\item una función \texttt{void eliminar\_raiz(tABB a, tElemento e, int (*f)(void *,void *))}, que dado un \emph{Árbol Binario de Búsqueda}, elimine el elemento almacenado en el nodo raíz del árbol, y reacomode la estructura tABB de forma tal que siga representando un árbol binario de búsqueda. \textbf{Deben hacer uso de free al eliminar un nodo hoja que pasa a ser nueva raiz, y moverse sobre la ED.}
-%\end{itemize}  
-
+\PEjercicio{5} Dada la definición dada para \texttt{TCadena}, implementar en \textbf{lenguaje C}:
+\begin{enumerate}[a)]
+	\item Una función \texttt{int es\_palindroma(TCadena cad)} que dada una cadena de caracteres \texttt{cad}, retorne 1 si \texttt{cad} es \textit{palíndroma}, y cero en caso contrario. Una cadena de caracteres se dice \textit{palíndroma}, si se lee de igual forma de izquierda a derecha que de derecha a izquierda. Ejemplo: ``anana'' y ``neuquen'', son cadenas \textit{palíndromas}.
+	\item Una función \texttt{TCadena[] clonar (TCadena[] arr, int long)}, que dado un arreglo de cadenas de caracteres \texttt{cad} de longitud \texttt{long}, retorne un nuevo arreglo de cadenas de igual longitud que \texttt{arr}, pero que contenga la \textit{clonación} de aquellas cadenas en \texttt{arr} que son \textit{palíndromas}. Para esto, contemplar el uso de la función definida en el inciso anterior, así como un correcto uso de la función \texttt{malloc} para reservar memoria a la hora de clonar las cadenas.
+\end{enumerate}
+Dado un \textit{Arreglo A}, la función \texttt{clonar()} retornará un nuevo \textit{Arreglo B}, tal como se indica en la siguiente figura:\\
+\begin{centering}
+	\includegraphics[height=0.2\textheight, width=1.05\textwidth]{Ejercicio_5.pdf} 
+\end{centering}
 \end{document}
 
