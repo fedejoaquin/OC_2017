@@ -34,7 +34,7 @@
 
 	\item Suponiendo que durante la transmisión el mensaje $T(x)$ es modificado con un error $E(x)$ de tal forma que el receptor recibe el mensaje $T'(x) = 110\,\, 0011\,0011\,1011$, determinar cómo opera el mecanismo de detección de errores y cuál es la conclusión que se alcanza.
 
-	\item Comparando el mensaje transmitido $T(x)$ y el mensaje recibido $T'(x)$, ¿cuál es el desarrollo del polinomio de error $E(x)$? Sabiendo cuál fue el error exacto que existió, ¿cuál es la longitud de la ráfaga en error? y ¿a qué conclusión se puede arribar?
+	\item Comparando el mensaje transmitido $T(x)$ y el mensaje recibido $T'(x)$, ¿cuál es el desarrollo del polinomio de error $E(x)$? Sabiendo cuál fue el error exacto que existió: ¿cuál es la longitud de la ráfaga en error? ¿A qué conclusión se puede arribar?
 \end{enumerate}
 
 \PEjercicio{4} Considerando el código Hamming mínima distancia 4 (Hamming extendido), empleando paridad par y estando la secuencia ordenada de izquierda a derecha:
@@ -50,8 +50,6 @@
 
 	\item Determinar cómo trabaja el mecanismo de detección/corrección ante una política $d=2$, $c=1$, si el síndrome fuera $0000$.
 
-%	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=3$, $c=0$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $0000$.
-
 \end{enumerate}
 
 \PEjercicio{5} Dados los tipos \texttt{tElemento}, \texttt{tNodo} y \texttt{tABB}, implementar en \textbf{lenguaje C}: 
@@ -59,7 +57,7 @@
 	\item Un procedimiento \texttt{void insertar(tABB a, tElemento e, int (*f)(void *,void *))}, que dado un \textit{árbol binario de búsqueda} \texttt{a} y una \textit{función de comparación} \texttt{f}, inserte el elemento \texttt{e} en su correspondiente ubicación, haciendo un correcto uso de la memoria dinámica. 
 \end{itemize}
 
-Se considera que la función \texttt{f}, retorna -1 si el primer argumento es menor que el segundo, 0 si los argumentos son iguales, y 1 si el primer argumento es mayor que el segundo. Dado un árbol para elementos enteros inicialmente vacío, la inserción de los elementos \textit{5, 3, 6, 4}, se debe resolver tal como se indica a continuación: \\
+Se considera que la función \texttt{f}, retorna -1 si el orden del primer argumento es menor que el orden del segundo, 0 si el orden es el mismo, y 1 si el orden del primer argumento es mayor que el orden del segundo. Dado un árbol para elementos enteros inicialmente vacío, la inserción de los elementos \textit{5, 3, 6, 4}, se debe resolver tal como se indica a continuación: \\
 \begin{center}
 	\includegraphics[width=1\textwidth]{Ejercicio_5.pdf}
 	\textit{Figura 1: \texttt{tElemento}, \texttt{tNodo}, \texttt{tABB}, y gráfica de inserción de los elementos 5, 3, 6 y 4, comenzando desde un árbol vacío. Por simplificación, se omitieron las referencias al padre de cada nodo.}
