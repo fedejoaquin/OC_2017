@@ -13,28 +13,30 @@
 \emph{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares, ni calculadora. Lea todo el ejercicio antes de comenzar a desarrollarlo.}	
 \end{centering}
 
-\PEjercicio{1}Dado el número \textbf{decimal} $-298.5625$ llevar adelante los siguientes cambios de base:
+\PEjercicio{1} \textbf{¡¡NUEVO!!} Dado el número \textbf{decimal} $-393.3125$ llevar adelante los siguientes cambios de base:
 \begin{enumerate}[a)]
-	\item Convertirlo a \textbf{octal}, empleando el método de la \textbf{división} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base}, con 4 dígitos octales para la parte entera y 6 para la parte fraccionaria.
+	\item Convertirlo a \textbf{octal}, empleando el método de la \textbf{multiplicación} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base}, con 4 dígitos octales para la parte entera y 5 dígitos octales para la parte fraccionaria.
 
-	\item Convertirlo a \textbf{binario} utilizando el método de la \textbf{multiplicación} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base disminuida}, con 12 bits para la parte entera y 6 bits para la parte fraccionaria.
+	\item Convertirlo a \textbf{hexadecimal} utilizando el método de la \textbf{división} tanto para la parte entera como para la parte fraccionaria, expresando el resultado en \textbf{complemento a la base disminuida}, con 5 digitos hexadecimales tanto para la parte entera como para la parte fraccionaria.
 \end{enumerate}
 
-\PEjercicio{2}Considerando los números {\textbf{decimales}} $X = 1537$ e $Y = 2559$, llevar adelante las siguientes operaciones, indicando claramente el resultado obtenido y la existencia o no de \emph{overflow}:
+\PEjercicio{2} \textbf{¡¡NUEVO!!} Considerando los números {\textbf{decimales}} $X = 142$ e $Y = 113$, llevar adelante las siguientes operaciones, indicando claramente el resultado obtenido y la existencia o no de \emph{overflow}:
 \begin{enumerate}[a)]
-	\item Calcular $- X - Y$, trabajando en \textbf{hexadecimal} en \textbf{complemento a la base}, con una precisión de cuatro dígitos (incluido el signo).
-	\item Calcular $ X + Y $, trabajando en \textbf{hexadecimal} en \textbf{complemento a la base disminuida}, con una precisión de cuatro dígitos (incluido el signo).
-	\item Calcular $X - Y$, haciendo uso de un hardware que opera en una codificación \textbf{BCD Exceso-3} y \textbf{complemento a la base}, con una precisión de cinco dígitos (incluido el signo), indicando claramente qué operación se está realizando en cada uno de los pasos intermedios.
+	\item Calcular $X + Y$, trabajando en \textbf{binario} en \textbf{complemento a la base}, con una precisión de nueve dígitos (incluido el signo).
+	\item Calcular $ - X - Y $, trabajando en \textbf{binario} en \textbf{complemento a la base disminuida}, con una precisión de nueve dígitos (incluido el signo).
+	\item Calcular $X - Y$, haciendo uso de un hardware que opera en una codificación \textbf{BCD Exceso-3} y \textbf{complemento a la base disminuida}, con una precisión de cuatro dígitos (incluido el signo), indicando claramente qué operación se está realizando en cada uno de los pasos intermedios.
 \end{enumerate}
 
-\PEjercicio{3} Considerando el Código Cíclico Redundante (CRC):
+\PEjercicio{3} \textbf{¡¡NUEVO!!} Considerando el Código Cíclico Redundante (CRC):
 \begin{enumerate}[a)]
-	\item Construir el mensaje $T(x)$ a transmitir asociado al mensaje de datos
-	$M(x) = 110\,1011\,1011$ empleando el polinomio generador $G(x) = x^4 + x + 1$.
+	\item Construir el mensaje $T(x)$ a transmitir asociado al mensaje de dato $M(x) = 100\,1101\,1001$, empleando el polinomio generador $G(x) = x^4 + x^3 + x^2 + x + 1$.
 
-	\item Suponiendo que durante la transmisión el mensaje $T(x)$ es modificado con un error $E(x)$ de tal forma que el receptor recibe el mensaje $T'(x) = 110\,\, 0011\,0011\,1011$, determinar cómo opera el mecanismo de detección de errores y cuál es la conclusión que se alcanza.
-
-	\item Comparando el mensaje transmitido $T(x)$ y el mensaje recibido $T'(x)$, ¿cuál es el desarrollo del polinomio de error $E(x)$? Sabiendo cuál fue el error exacto que existió, ¿cuál es la longitud de la ráfaga en error? y ¿a qué conclusión se puede arribar?
+	\item Suponiendo que durante la transmisión el mensaje $T(x)$ es modificado y el receptor recibe un $T'(x)$ tal que $T'(x) = T(x) \oplus E(x)$, donde $E(x) = x^2 (x^6 + x^2 + 1)$:
+	\begin{enumerate}[b.1)]
+		\item ¿Cuál es el mensaje $T'(x)$ recibido?
+		\item ¿Cuál es la longitud de la ráfaga de error? ¿Es capaz CRC de detectar dicha ráfaga? Justificar.
+		\item Mostrar cómo opera el mecanismo de detección de errores y cuál es la conclusión que se alcanza.
+	\end{enumerate} 
 \end{enumerate}
 
 \PEjercicio{4} Considerando el código Hamming mínima distancia 4 (Hamming extendido), empleando paridad par y estando la secuencia ordenada de izquierda a derecha:
@@ -50,14 +52,12 @@
 
 	\item Determinar cómo trabaja el mecanismo de detección/corrección ante una política $d=2$, $c=1$, si el síndrome fuera $0000$.
 
-%	\item Determinar cómo trabaja el mecanismo de detección/corrección antes una política $d=3$, $c=0$ cuando al recalcular los bits de código de un codeword recibido se obtiene síndrome $0000$.
-
 \end{enumerate}
 
-\PEjercicio{5} Dada la definición para \texttt{TCadena}, implementar en \textbf{lenguaje C}:
+\PEjercicio{5} \textbf{¡¡NUEVO!!} Dada la definición para \texttt{TCadena}, implementar en \textbf{lenguaje C}:
 \begin{enumerate}[a)]
-	\item Una función \texttt{int es\_palindroma(TCadena cad)} que dada una cadena de caracteres \texttt{cad}, retorne 1 si \texttt{cad} es \textit{palíndroma}, y cero en caso contrario. Una cadena de caracteres se dice \textit{palíndroma}, si se lee de igual forma de izquierda a derecha que de derecha a izquierda. Ejemplo: ``anana'' y ``neuquen'', son cadenas \textit{palíndromas}.
-	\item Una función \texttt{TCadena[] clonar (TCadena[] arr, int long)}, que dado un arreglo de cadenas de caracteres \texttt{arr} de longitud \texttt{long}, retorne un nuevo arreglo de cadenas de igual longitud que \texttt{arr}, pero que contenga la \textit{clonación} de aquellas cadenas en \texttt{arr} que son \textit{palíndromas}. Para esto, contemplar el uso de la función definida en el inciso anterior, así como un correcto uso de la función \texttt{malloc} para reservar memoria a la hora de clonar las cadenas.
+	\item Una función \texttt{int es\_palindroma(TCadena cad)} que dada una cadena de caracteres \texttt{cad}, retorne 1 si \texttt{cad} es \textit{palíndroma}, y cero en caso contrario. Una cadena de caracteres se dice \textit{palíndroma}, si se lee de igual forma de izquierda a derecha que de derecha a izquierda. Ejemplo: ``anana'' y ``neuquen'', son cadenas \textit{palíndromas}, mientras ``parcial'' no lo es.
+	\item Una función \texttt{TCadena[] clonar (TCadena[] arr, int long)}, que dado un arreglo de cadenas de caracteres \texttt{arr} de longitud \texttt{long}, retorne un nuevo arreglo de cadenas de igual longitud que \texttt{arr}, pero que contenga la \textit{clonación en profundidad} de aquellas cadenas en \texttt{arr} que son \textit{palíndromas}. Para esto, contemplar el uso de la función definida en el inciso anterior, así como un correcto uso de la función \texttt{malloc} para reservar memoria a la hora de clonar las cadenas.
 \end{enumerate}
 Dado un \textit{Arreglo A}, la función \texttt{clonar()} retornará un nuevo \textit{Arreglo B}, tal como se indica en la siguiente figura:\\
 \begin{centering}
