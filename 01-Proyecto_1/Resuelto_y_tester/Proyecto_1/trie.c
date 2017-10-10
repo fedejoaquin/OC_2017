@@ -60,16 +60,25 @@ void eliminar(TTrie tr, TNodo nodo){
     TNodo padre = nodo->padre;
 
     if (nodo != tr->raiz){
+
         nodo->contador = 0;
         free(nodo->hijos);
         nodo->padre = NULL;
         nodo->rotulo = ' ';
-        free(nodo);
 
+        //Se elimina el nodo en cuestion, asi como tambien de la lista de su padre
         //Se elimina el nodo padre tambien, sólo si su unico hijo es el nodo anteriormente eliminado
         if(lo_size(padre->hijos) == 1){
             lo_eliminar(padre->hijos, lo_primera(padre->hijos));
+            free(nodo);
             eliminar(tr, padre);
+        }else{
+            TPosicion pos = lo_primera(padre->hijos);
+            while(pos->elemento != nodo){
+                pos = lo_siguiente(padre->hijos, pos);
+            }
+            lo_eliminar(padre->hijos, pos);
+            free(nodo);
         }
     }
 }
@@ -77,7 +86,7 @@ void eliminar(TTrie tr, TNodo nodo){
 TTrie crear_trie(){
     TTrie ret = (TTrie) malloc(sizeof(struct trie));
     TNodo raiz = (TNodo) malloc(sizeof(struct nodo));
-    nodo_aux = (TNodo) malloc(sizeof(struct nodo));
+    nodo_aux = (TNodo) malloc(sizeof(struct nodo)); //Auxiliar creado para busquedas futuras
 
     raiz->rotulo = ' ';
     raiz->padre = NULL;
