@@ -62,6 +62,7 @@ void eliminar(TTrie tr, TNodo nodo){
     if (nodo != tr->raiz){
 
         nodo->contador = 0;
+        free(nodo->hijos->lista); //Este free lo deberiamos haber considerado con un lo_destruir.
         free(nodo->hijos);
         nodo->padre = NULL;
         nodo->rotulo = ' ';

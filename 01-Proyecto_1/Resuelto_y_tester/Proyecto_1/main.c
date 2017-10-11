@@ -4,7 +4,7 @@
 #include "lista.h"
 #include "lista_ordenada.h"
 #include "trie.h"
-#include "constantes.h"
+#include "constantes.h" //Cambiar por nombre del archivo donde esten las constantes
 
 //Comparador de enteros
 int mi_comparador(void * val1, void * val2){
@@ -168,7 +168,7 @@ void tester_lista_ordenada(){
 }
 
 void tester_trie(){
-    char * strings [] = {"esto\0","es\0","organización\0","de\0","computadoras\0",
+    char * strings [] = {"esto\0","es\0","organizacion\0","de\0","computadoras\0",
                          "estamos\0","felices\0","de\0","esta\0","prueba\0"};
     //1 - Trie {}
     TTrie mi_trie = crear_trie();
