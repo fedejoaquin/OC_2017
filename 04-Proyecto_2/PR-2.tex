@@ -1,0 +1,137 @@
+% ORGANIZACIÓN DE COMPUTADORAS
+% SEGUNDO CUATRIMESTRE 2017
+% PROYECTO 2 - PROGRAMACIÓN EN ASSEMBLER
+
+\documentclass[12pt,a4paper]{article}
+\input{estilo/Catedras.sty}
+\usepackage{tabularx}
+
+\begin{document}
+
+\PRnumero{2}{Programación en Lenguaje Ensamblador}
+
+\section*{Propósito}
+El objetivo principal del proyecto, es implementar en lenguaje Ensamblador un programa que agregue el número de línea a cada línea de un archivo de texto parametrizado. En función a la invocación, la numeración línea a línea del contenido del archivo de entrada será visualizada por consola, o bien, será almacenada en un nuevo archivo también parametrizado.
+
+\section*{Sintaxis}
+El programa implementado debe permitir ser invocado desde la línea de comandos mediante la siguiente sintaxis:
+\begin{center}
+	\texttt{enum [-h] | archivo\_entrada [ archivo\_salida ]}
+\end{center}
+
+Los parámetros entre corchetes denotan \textit{parámetros opcionales} y las opciones separadas por una barra vertical denotan \textit{posibles alternativas} a llamadas por línea de comandos. El significado de las diferentes opciones de invocación es el siguiente:
+\begin{itemize}
+	\item Si se especifica únicamente el parámetro \texttt{-h}, el programa debe ofrecer una pequeña ayuda por pantalla, la cual debe reflejar un breve resumen del propósito general del programa junto con la especificación de las diferentes posibilidades que ofrece para ser invocado.
+	\item Si se especifica únicamente el parámetro \texttt{archivo de entrada}, el programa debe leer los strings (línea por línea) contenidos en el \texttt{archivo de entrada}, y mostrar cada una de estas líneas de forma numerada en la consola. 
+	\item Si se especifica tanto el nombre del \texttt{archivo de entrada} como el nombre del \texttt{archivo de salida}, el programa debe leer los strings (línea por línea) contenidos en el \texttt{archivo de entrada}, y escribir cada una de estas líneas de forma numerada en el \texttt{archivo de salida}.
+\end{itemize}
+	
+Se considera que una línea está numerada, cuando antes de mostrar/escribir la misma, se agrega el número de línea seguido de ``: ''(dos puntos y un espacio). Por ejemplo, si el \texttt{archivo de entrada} mantiene el contenido indicado en la Figura 1, ya sea en la consola o en el \texttt{archivo de salida}, se deberá mostrar/escribir el contenido indicado en la Figura 2. \\ \\
+\begin{centering}
+	\begin{tabular}[t]{c|c}
+		\begin{minipage}[t]{0.50\textwidth}
+			\begin{verbatim}
+				#include <stdio.h>
+				int main(){
+				  int i = 0;
+				  printf("%i\n", i);
+				  return 0;
+				}		
+			\end{verbatim}
+		\end{minipage} &
+		\begin{minipage}[t]{0.50\textwidth}
+			\begin{verbatim}
+				1: #include <stdio.h>
+				2: int main(){
+				3:   int i = 0;
+				4:   printf("%i\n", i);
+				5:   return 0;
+				6:  }	
+			\end{verbatim}
+		\end{minipage} \\
+		\textbf{\textit{Figura I}} & \textbf{\textit{Figura II}}
+	\end{tabular}
+\end{centering}
+
+Toda vez que el programa termine su ejecución, se debe informar sobre la situación de terminación a quien haya invocado al mismo. Para esto se debe utilizar la llamada al sistema \texttt{sys\_exit}, respetando la siguiente convención:
+\begin{center}
+	\begin{tabular}[t]{|l|l|}
+		\hline \textbf{EBX} & \textbf{Detalle} \\ \hline
+		\texttt{1} & Terminación normal. \\ \hline
+		\texttt{2} & Terminación anormal por error en el archivo de entrada. \\ \hline
+		\texttt{3} & Terminación anormal por error en el archivo de salida.\\ \hline
+		\texttt{4} & Terminación anormal por otras causas.\\ \hline
+	\end{tabular}
+\end{center}
+
+\section*{Sobre la implementación}
+\begin{itemize}
+	
+	\item El archivo fuente principal se debe denominar \textbf{\textsf{enumerar.asm}}.
+	
+	\item Se puede asumir que la entrada contiene a lo sumo 999 líneas y que cada línea está compuesta de a lo sumo 1000 caracteres.
+	
+	\item La copia o plagio del proyecto es una falta grave. Quien incurra en estos actos de deshonestidad académica, desaprobará automáticamente el proyecto.
+\end{itemize}
+
+\section*{Sobre el estilo de programación}
+\begin{itemize}
+		
+	\item El código implementado debe reflejar la aplicación de las técnicas de programación modular estudiadas a lo largo de la carrera.
+	
+	\item En el código, entre eficiencia y claridad, se debe optar por la claridad. Toda decisión en este sentido debe constar en la documentación que acompaña al programa implementado.
+	
+	\item El código debe estar indentado, fuertemente comentado, y debe reflejar el uso adecuado de nombres significativos para la definición de variables, funciones y parámetros.
+	
+\end{itemize}
+
+\section*{Sobre la documentación}
+
+Los proyectos que no incluyan documentación estarán automáticamente desaprobados. La misma debe:
+\begin{itemize}
+	
+	\item Estar dirigida a desarrolladores.
+	
+	\item Explicar detalladamente los programas realizados, incluyendo el diseño de la aplicación y el modelo de datos utilizado, así como toda decisión de diseño tomada y toda observación que se considere pertinente.
+	
+	\item Incluir explicación de \textbf{todas} las funciones, rutinas o algoritmos implementados, indicando su prototipo y el uso de los parámetros de entrada y de salida (tanto sean registros, valores almacenados en la pila, etc). Se espera que la explicación esté dada en términos de diagramas, pseudocódigos, o cualquier representación que considere adecuada, la cual asista al desarrollador a comprender cada una de las líneas del código implementado.
+	
+\end{itemize}
+
+\section*{Sobre la entrega}
+Toda comisión que no cumpla con los requerimientos, estará automáticamente desaprobada. Los mismos son:
+\begin{itemize}
+		
+	\item Las comisiones estarán conformadas por 2 alumnos, y serán las que oportunamente registró y notificó la cátedra.
+		
+	\item La entrega del código fuente y la documentación se realizará a través de un archivo comprimido \textbf{zip} o \textbf{rar}, denominado \textbf{\textit{PR2-Apellido1-Apellido2}}, que debe incluir las siguientes carpetas:
+	\begin{itemize}
+		\item \textbf{Fuentes}, donde se debe incorporar el archivos fuente “enumerar.asm” (ningún otro).
+		\item \textbf{Documentación}, donde se debe incorporar el informe del proyecto en formato PDF (ningún otro).
+	\end{itemize}		
+	\item El archivo comprimido debe enviarse por e-mail, respetando el siguiente formato: 
+	\begin{itemize}
+		\item \textbf{Para:} \textit{federico.joaquin@cs.uns.edu.ar}
+		\item \textbf{Asunto:} \textit{OC :: PR2 :: COM XX :: Apellido1 - Apellido2}
+		\item \textbf{Cuerpo del e-mail:} \\
+		\textit{Se adjunta Proyecto Nº 2, de la comisión XX: } \\
+		\textit{Apellido, Nombre 1 - LU 1} \\
+		\textit{Apellido, Nombre 2 - LU 2}
+	\end{itemize}
+	
+	\item El e-mail debe ser enviado con anterioridad al día \textbf{Jueves 23 de Noviembre de 2017, 22:00 hs}. Se considerará como hora de ingreso, la registrada en el servidor de e-mail del DCIC.
+		
+\end{itemize}
+
+\section*{Sobre la corrección}
+
+\begin{itemize}
+	
+	\item La cátedra evaluará tanto el \textbf{diseño} e \textbf{implementación}
+	como la \textbf{documentación} y \textbf{presentación} del proyecto, y el cumpliemiento de \textbf{todas} las condiciones de entrega.
+	
+	\item Tanto para compilar el proyecto, como para verificar su funcionamiento, se utilizará la máquina virtual “OCUNS” publicada en el sitio web de la cátedra.
+	
+\end{itemize}
+
+\end{document}
