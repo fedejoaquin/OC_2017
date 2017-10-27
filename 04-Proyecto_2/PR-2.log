@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.10)  26 OCT 2017 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.10)  27 OCT 2017 08:52
 entering extended mode
 **./PR-2.tex
 (PR-2.tex
@@ -578,17 +578,17 @@ Package pdftex.def Info: estilo/UniLogo-eps-converted-to.pdf used on input line
  11.
 (pdftex.def)             Requested size: 63.59795pt x 61.24342pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--57
+Underfull \hbox (badness 10000) in paragraph at lines 29--58
 
  []
 
 
-Overfull \hbox (24.4pt too wide) in paragraph at lines 29--57
+Overfull \hbox (24.4pt too wide) in paragraph at lines 29--58
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--57
+Underfull \hbox (badness 10000) in paragraph at lines 29--58
 
  []
 
@@ -596,14 +596,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--57
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./estilo/DeptoLogo-eps-co
 nverted-to.pdf> <./estilo/UniLogo-eps-converted-to.pdf>] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 111.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 110.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 110.
  [3] (PR-2.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
@@ -628,7 +628,7 @@ public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb>
-Output written on PR-2.pdf (3 pages, 136748 bytes).
+Output written on PR-2.pdf (3 pages, 136136 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

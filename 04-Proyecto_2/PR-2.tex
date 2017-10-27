@@ -22,8 +22,8 @@ El programa implementado debe permitir ser invocado desde la línea de comandos 
 Los parámetros entre corchetes denotan \textit{parámetros opcionales} y las opciones separadas por una barra vertical denotan \textit{posibles alternativas} a llamadas por línea de comandos. El significado de las diferentes opciones de invocación es el siguiente:
 \begin{itemize}
 	\item Si se especifica únicamente el parámetro \texttt{-h}, el programa debe ofrecer una pequeña ayuda por pantalla, la cual debe reflejar un breve resumen del propósito general del programa junto con la especificación de las diferentes posibilidades que ofrece para ser invocado.
-	\item Si se especifica únicamente el parámetro \texttt{archivo de entrada}, el programa debe leer los strings (línea por línea) contenidos en el \texttt{archivo de entrada}, y mostrar cada una de estas líneas de forma numerada en la consola. 
-	\item Si se especifica tanto el nombre del \texttt{archivo de entrada} como el nombre del \texttt{archivo de salida}, el programa debe leer los strings (línea por línea) contenidos en el \texttt{archivo de entrada}, y escribir cada una de estas líneas de forma numerada en el \texttt{archivo de salida}.
+	\item Si se especifica únicamente el parámetro \texttt{archivo de entrada}, el programa debe leer las líneas (línea por línea) contenidas en el \texttt{archivo de entrada}, y mostrar cada una de estas líneas de forma numerada en la consola. 
+	\item Si se especifica tanto el nombre del \texttt{archivo de entrada} como el nombre del \texttt{archivo de salida}, el programa debe leer las lineas (línea por línea) contenidas en el \texttt{archivo de entrada}, y escribir cada una de estas líneas de forma numerada en el \texttt{archivo de salida}.
 \end{itemize}
 	
 Se considera que una línea está numerada, cuando antes de mostrar/escribir la misma, se agrega el número de línea seguido de ``: ''(dos puntos y un espacio). Por ejemplo, si el \texttt{archivo de entrada} mantiene el contenido indicado en la Figura 1, ya sea en la consola o en el \texttt{archivo de salida}, se deberá mostrar/escribir el contenido indicado en la Figura 2. \\ \\
@@ -47,6 +47,7 @@ Se considera que una línea está numerada, cuando antes de mostrar/escribir la 
 				4:   printf("%i\n", i);
 				5:   return 0;
 				6:  }	
+				
 				Cantidad de líneas: 6.
 				
 			\end{verbatim}
@@ -69,9 +70,7 @@ Toda vez que el programa termine su ejecución, se debe informar sobre la situac
 \section*{Sobre la implementación}
 \begin{itemize}
 	
-	\item El archivo fuente principal se debe denominar \textbf{\textsf{enumerar.asm}}.
-	
-	\item Se puede asumir que la entrada contiene a lo sumo 999 líneas y que cada línea está compuesta de a lo sumo 1000 caracteres.
+	\item El archivo fuente principal se debe denominar \textbf{\textsf{enu.asm}}.
 	
 	\item La copia o plagio del proyecto es una falta grave. Quien incurra en estos actos de deshonestidad académica, desaprobará automáticamente el proyecto.
 \end{itemize}
