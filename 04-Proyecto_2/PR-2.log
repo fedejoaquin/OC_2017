@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.10)  30 OCT 2017 08:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.10)  31 OCT 2017 07:38
 entering extended mode
 **./PR-2.tex
 (PR-2.tex
@@ -454,12 +454,7 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \TX@delta=\dimen113
 \TX@cols=\count91
 \TX@ftn=\toks19
-) (PR-2.aux
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
-LaTeX Info: Redefining \. on input line 10.
-LaTeX Info: Redefining \% on input line 10.
-)
+) (PR-2.aux)
 \openout1 = `PR-2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -626,7 +621,7 @@ public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmti8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.
 pfb>
-Output written on PR-2.pdf (3 pages, 138000 bytes).
+Output written on PR-2.pdf (3 pages, 138540 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
