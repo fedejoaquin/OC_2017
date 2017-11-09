@@ -1,0 +1,99 @@
+% ORGANIZACIÓN DE COMPUTADORAS
+% SEGUNDO CUATRIMESTRE 2017
+% SEGUNDO EXAMEN PARCIAL
+
+\documentclass[12pt,a4paper]{article}
+\input{estilo/Catedras.sty}
+
+\begin{document}
+
+\Examen{Segundo Examen Parcial}
+
+\begin{centering}
+\emph{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares. Lea todo el ejercicio antes de comenzar a desarrollarlo.}	
+\end{centering}
+
+\PEjercicio{1} Hacer
+
+\PEjercicio{2} Hacer
+
+\PEjercicio{3} Hacer
+
+\PEjercicio{4} Hacer
+
+\PEjercicio{5} Considerando el siguiente programa para la arquitectura OCUNS, en la que toda lectura/escritura de/en la dirección FF es atrapada y re{}direccionada a la entrada/salida estándar: \\ [2.5mm]
+\begin{small}
+	\begin{minipage}{.4\textwidth}
+		\begin{verbatim}
+			      LDA R0, FFh
+			      LOAD R1, 0(R0)
+			      LOAD R2, 0(R0)
+			      XOR R3, R3, R3
+			      LDA R4, lbl3
+			      JZ R1, lbl3
+			      JZ R2, lbl3
+			      SUB R5, R1, R2
+			      JG R5, lbl2
+			lbl1: ADD R3, R3, R2
+			      DEC R1
+			      JZ R1, lbl3
+			      JMP R4
+			lbl2: ADD R3, R3, R1
+			      DEC R2
+			      JZ R2, lbl2
+			lbl3: STORE R3, 0(R0)
+			      HLT
+		\end{verbatim}
+	\end{minipage}
+	\begin{minipage}{.6\textwidth}	
+		\begin{tabular}{|c|l|c|l|}\hline
+			\textsc{Op.} & \textsc{Descr.} & \textsc{Form.} & \textsc{Pseudocódigo} \\ \hline
+			\textbf{0} & \textsf{add} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] + R[t]} \\
+			\textbf{1} & \textsf{sub} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] - R[t]} \\
+			\textbf{2} & \textsf{and} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] \& R[t]} \\
+			\textbf{3} & \textsf{xor} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] \^{} R[t]} \\
+			\textbf{4} & \textsf{lsh} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] <{}<{} R[t]} \\
+			\textbf{5} & \textsf{rsh}  & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] >{}>{} R[t]} \\
+			\textbf{6} & \textsf{load}  & \textbf{I} & \texttt{R[d] $\leftarrow$ mem[offset + R[s]]} \\
+			\textbf{7} & \textsf{store} & \textbf{I} & \texttt{mem[offset + R[d]] $\leftarrow$ R[s]} \\
+			\textbf{8} & \textsf{lda}   & \textbf{II} & \texttt{R[d] $\leftarrow$ addr} \\
+			\textbf{9} & \textsf{jz}    & \textbf{II} & \texttt{if (R[d] == 0) PC $\leftarrow$ PC + addr} \\
+			\textbf{A} & \textsf{jg}    & \textbf{II} & \texttt{if (R[d] >{} 0) PC $\leftarrow$ PC + addr} \\
+			\textbf{B} & \textsf{call}  & \textbf{II} & \texttt{R[d] $\leftarrow$ PC; PC $\leftarrow$ addr} \\
+			\textbf{C} & \textsf{jmp}   & \textbf{III} & \texttt{PC $\leftarrow$ R[d]} \\
+			\textbf{D} & \textsf{inc}   & \textbf{III} & \texttt{R[d] $\leftarrow$ R[d] + 1} \\
+			\textbf{E} & \textsf{dec}   & \textbf{III} & \texttt{R[d] $\leftarrow$ R[d] - 1} \\
+			\textbf{F} & \textsf{hlt}   & \textbf{III} & \texttt{exit} \\ \hline
+		\end{tabular}	
+	\end{minipage}
+	\begin{center}
+		\begin{tabular}{*{17}{c}}
+			\textsf{FORMATO} & 15 & 14 & 13 & 12 & 11 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3 & 2 & 1 & 0 \\ \hline
+			\multicolumn{1}{|c|}{\textbf{I}} & 0 & $\times$ & $\times$ & $\times$ &
+			\multicolumn{4}{|c|}{\textsf{dest. d}} &
+			\multicolumn{4}{|c|}{\textsf{src. s}} &
+			\multicolumn{4}{|c|}{\textsf{src. t / off.}} \\ \hline
+			\multicolumn{1}{|c|}{\textbf{II}} & 1 & 0 & $\times$ & $\times$ &
+			\multicolumn{4}{|c|}{\textsf{dest. d}} &
+			\multicolumn{8}{|c|}{\textsf{address addr}} \\ \hline
+			\multicolumn{1}{|c|}{\textbf{III}} & 1 & 1 & $\times$ & $\times$ &
+			\multicolumn{4}{|c|}{\textsf{dest. d}} &
+			\multicolumn{8}{|c|}{\textsf{-}} \\ \hline
+		\end{tabular}
+	\end{center}		
+\end{small}
+
+\begin{enumerate}[a)]
+	\item Ensamblar el programa a partir de la dirección 00h. Si se tuviese que reubicar el código a partir de la dirección 20h, ¿cuáles de las referencias a memoria requieren ser ajustadas y cuáles no?
+	\item Suponiendo que los valores ingresados por teclado son 1Ah y 04h:
+	\begin{enumerate}[c.1)]
+		\item Realice una traza mostrando la evolución del contenido de cada registro.
+		\item Describir el propósito del programa en su conjunto.
+		\item ¿Qué sucede con el resultado retornado por el programa si los valores ingresados fueran 04h y 1Ah? ¿Cuál es la diferencia?
+		\item ¿Cuál es la restricción en cuanto a los valores de entrada que considera el programa para su correcto funcionamiento? 
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+
