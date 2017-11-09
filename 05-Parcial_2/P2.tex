@@ -17,7 +17,34 @@
 
 \PEjercicio{2} Hacer
 
-\PEjercicio{3} Hacer
+\PEjercicio{3} Determinar cuál es el contenido final de cada uno de los registros y posiciones de memoria involucrados en la siguiente secuencia de instrucciones. Indicar en cada caso, el número de instrucción que origina cada cambio. Asumir que el primer operando es el destino y el segundo la fuente de información para la operación.
+\begin{center}
+	\begin{minipage}{0.4\textwidth}
+		\begin{enumerate}[(1)]
+			\itemsep -5pt
+			\item mov R1,\#0200
+			\item mov (R1), \#0100
+			\item mov 0100(R1), R1
+			\item mov R2, \#0500
+			\item mov @0100(R1), \#0500
+			\item mov (0200), 0300
+			\item mov R3, 0200
+			\item mov R3, @0100(R3)
+		\end{enumerate}
+	\end{minipage}
+	\begin{minipage}{0.4\textwidth}
+		Interpretación
+		\begin{tabular}{ll}
+			\#xxxx   & Inmediato\\
+			R       & Registro \\
+			(R)     & Registro indirecto\\
+			xxxx    & Absoluto \\
+			xxxx(R) & Indexado \\
+			(xxxx)  & Memoria indirecto\\
+			@xxxx(R) & Pre-indexado indirecto
+		\end{tabular}
+	\end{minipage}
+\end{center}
 
 \PEjercicio{4} Hacer
 
