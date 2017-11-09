@@ -21,7 +21,7 @@
 
 \PEjercicio{4} Hacer
 
-\PEjercicio{5} Considerando el siguiente programa para la arquitectura OCUNS, en la que toda lectura/escritura de/en la dirección FF es atrapada y re{}direccionada a la entrada/salida estándar: \\ [2.5mm]
+\PEjercicio{5} Considerando el siguiente programa para la arquitectura OCUNS, en la que toda lectura/escritura sobre la dirección FF es redireccionada a la E/S estándar: \\ [2.5mm]
 \begin{small}
 	\begin{minipage}{.4\textwidth}
 		\begin{verbatim}
@@ -84,7 +84,8 @@
 \end{small}
 
 \begin{enumerate}[a)]
-	\item Ensamblar el programa a partir de la dirección 00h. Si se tuviese que reubicar el código a partir de la dirección 20h, ¿cuáles de las referencias a memoria requieren ser ajustadas y cuáles no?
+	\item Ensamblar el programa a partir de la dirección 00h. \label{ensamblado}
+	\item Si se reubicara el código máquina obtenido en el inciso (\ref{ensamblado}) a partir de la dirección 20h, ¿qué referencias a memoria requieren ser ajustadas? Justificar adecuadamente.
 	\item Suponiendo que los valores ingresados por teclado son 1Ah y 04h:
 	\begin{enumerate}[c.1)]
 		\item Realice una traza mostrando la evolución del contenido de cada registro.
