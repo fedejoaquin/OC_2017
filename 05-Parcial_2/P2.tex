@@ -13,7 +13,36 @@
 \emph{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares. Lea todo el ejercicio antes de comenzar a desarrollarlo.}	
 \end{centering}
 
-\PEjercicio{1} Hacer
+\PEjercicio{1}  En el marco de la norma IEEE 754, considerando la representación en punto flotante de media precisión: mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:
+\begin{center}
+	\begin{tabular}{|c|c|c|}\hline
+		Sig (1b) & Exponente (8 bits) & Mantisa (10 bits)\\\hline
+	\end{tabular}
+\end{center}
+
+Dados los números:\quad
+$$X = (1\; 10110\; 0011111001) \quad Y = (0\; 00111\; 1000111100)$$
+
+
+Realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pares y hacia $+\infty$, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits G, R y S del resultado y con R y S al redondear. El resultado debe ser expresando según la representación enunciada.
+
+
+
+%\ begin{verbatim}
+% exponente X = 10010 - 1111 = 11
+% exponente Y = 10101 - 1111 = 110
+%
+%          1.1101001010 x 2^3
+% x        1.0010110110 x 2^6
+% ------------------------
+% 10.001001010|11010011100 x 2^9
+%              GR----S=1
+%
+% Normalizar - No entra G
+% 1.0001001010|11010011100 x 2^10
+%              R----S=1
+%\end{verbatim}
+
 
 \PEjercicio{2} Hacer
 
