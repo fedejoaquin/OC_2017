@@ -10,23 +10,26 @@
 \Examen{Segundo Examen Parcial}
 
 \begin{centering}
-\emph{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares. Lea todo el ejercicio antes de comenzar a desarrollarlo.}	
+\textit{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares. Lea todo el ejercicio antes de comenzar a desarrollarlo.}
 \end{centering}
 
-\PEjercicio{1}  En el marco de la norma IEEE 754, considerando la representación en punto flotante de media precisión: mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:
+\PEjercicio{1} Considerando una representación en punto flotante donde la mantisa está codificada con 12 bits en signo magnitud, el exponente con 4 bits en exceso, y la base utilizada es 2, realizar las siguientes operaciones aritméticas, normalizando el resultado obtenido e indicando claramente qué hace en cada paso y la existencia o no de \textit{underflow} y/o \textit{overflow}: \\ [2mm]
+\begin{minipage}{0.5\textwidth}
+	\centering a) $(-28.50) + 57.17$ 
+\end{minipage}    
+\begin{minipage}   {0.3\textwidth}	               
+	\centering b) $12.62 \times 7.5$
+\end{minipage}
+
+
+\PEjercicio{2} En el marco de la norma IEEE 754, considerando la representación en punto flotante de media precisión: mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:
 \begin{center}
 	\begin{tabular}{|c|c|c|}\hline
 		Sig (1b) & Exponente (8 bits) & Mantisa (10 bits)\\\hline
 	\end{tabular}
 \end{center}
 
-Dados los números:\quad
-$$X = (1\; 10110\; 0011111001) \quad Y = (0\; 00111\; 1000111100)$$
-
-
-Realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pares y hacia $+\infty$, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits G, R y S del resultado y con R y S al redondear. El resultado debe ser expresando según la representación enunciada.
-
-
+Dados los números $X = (1\; 10110\; 0011111001)$ e $Y = (0\; 00111\; 1000111100)$, realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pares y hacia $+\infty$, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits G, R y S del resultado y con R y S al redondear. El resultado debe ser expresando según la representación enunciada.
 
 %\ begin{verbatim}
 % exponente X = 10010 - 1111 = 11
@@ -43,10 +46,9 @@ Realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pa
 %              R----S=1
 %\end{verbatim}
 
+\PEjercicio{3} \newpage
 
-\PEjercicio{2} Hacer
-
-\PEjercicio{3} Determinar cuál es el contenido final de cada uno de los registros y posiciones de memoria involucrados en la siguiente secuencia de instrucciones. Indicar en cada caso, el número de instrucción que origina cada cambio. Asumir que el primer operando es el destino y el segundo la fuente de información para la operación.
+\PEjercicio{4} Determinar cuál es el contenido final de cada uno de los registros y posiciones de memoria involucrados en la siguiente secuencia de instrucciones. Indicar en cada caso, el número de instrucción que origina cada cambio. Asumir que el primer operando es el destino y el segundo la fuente de información para la operación.
 \begin{center}
 	\begin{minipage}{0.4\textwidth}
 		\begin{enumerate}[(1)]
@@ -74,8 +76,6 @@ Realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pa
 		\end{tabular}
 	\end{minipage}
 \end{center}
-
-\PEjercicio{4} Hacer
 
 \PEjercicio{5} Considerando el siguiente programa para la arquitectura OCUNS, en la que toda lectura/escritura sobre la dirección FF es redireccionada a la E/S estándar: \\ [2.5mm]
 \begin{small}
@@ -142,13 +142,8 @@ Realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pa
 \begin{enumerate}[a)]
 	\item Ensamblar el programa a partir de la dirección 00h. \label{ensamblado}
 	\item Si se reubicara el código máquina obtenido en el inciso (\ref{ensamblado}) a partir de la dirección 20h, ¿qué referencias a memoria requieren ser ajustadas? Justificar adecuadamente.
-	\item Suponiendo que los valores ingresados por teclado son 1Ah y 04h:
-	\begin{enumerate}[c.1)]
-		\item Realice una traza mostrando la evolución del contenido de cada registro.
-		\item Describir el propósito del programa en su conjunto.
-		\item ¿Qué sucede con el resultado retornado por el programa si los valores ingresados fueran 04h y 1Ah? ¿Cuál es la diferencia?
-		\item ¿Cuál es la restricción en cuanto a los valores de entrada que considera el programa para su correcto funcionamiento? 
-	\end{enumerate}
+	\item Suponiendo que los valores ingresados por teclado son 1Ah y 04h, realice una traza mostrando la evolución del contenido de cada registro, para luego, describir el propósito del programa en su conjunto.
+	\item ¿Qué sucede con el resultado retornado si los valores ingresados fueran 04h y 1Ah? ¿Cuál es la diferencia? ¿Existe alguna restricción para los datos de entrada en cuanto al correcto funcionamiento del programa?
 \end{enumerate}
 
 \end{document}
