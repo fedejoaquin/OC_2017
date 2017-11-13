@@ -9,41 +9,15 @@
 
 \Examen{Segundo Examen Parcial}
 
-\begin{centering}
-\textit{Apague cualquier dispositivo electrónico en su poder y manténgalo guardado. No puede utilizar auriculares. Lea todo el ejercicio antes de comenzar a desarrollarlo.}
-\end{centering}
-
 \PEjercicio{1} 
-Asumiendo que se cuenta en todos los casos con las instrucciones \texttt{add} y \texttt{mpy}. Encontrar una secuencia de instrucciones que resulte óptima en tiempo de ejecución (es decir, que minimice la cantidad de accesos a memoria), y cuya ejecución tenga como resultado la evaluación de la siguiente expresión aritmética:
-
-\begin{center}
-	$B = (A \times (D + C))  + (A \times (D + C)^2)$
-\end{center}
-Las etiquetas denotan las \textit{direcciones de memoria} que contienen los valores sobre los que se quiere operar
-
+Implementar la siguiente expresión aritmética $B = (A \times (D + C))  + (A \times (D + C)^2)$, siendo A,B,C y D etiquetas que denotan \textit{direcciones de memoria}, y asumiendo que se cuenta con las instrucciones \texttt{add} y \texttt{mpy}, para las siguientes arquitecturas:
 \begin{enumerate}[a)]
+	\item Una arquitectura de \textbf{0--direcciones} (tipo pila), contando con la instrucción \texttt{dup} (duplica el tope de la pila). Determinar la profundidad de la pila alcanzada. 
 	
-	\item Asumiendo una arquitectura de 0--direcciones (tipo pila), con las instrucciones \texttt{push} y \texttt{pop} para acceder a memoria y la instrucción \texttt{dup} que duplica el tope de la pila.Determinar la cantidad de instrucciones y la profundidad de la pila alcanzada. 
+	\item Una arquitectura estilo \textbf{RISC}, registro a registro, con instrucciones \texttt{lda}, \texttt{ld} y \texttt{st}. Indicar la cantidad de accesos a memoria realizados.
 	
-	\item Asumiendo una arquitectura estilo RISC con operaciones registro a registro, sin limitaciones en cuanto a los registros disponibles, y las instrucciones \texttt{ld} (load) y \texttt{st} (store) para acceder a memoria, y la instrucción \texttt{lda} (load address). Las operaciones aritméticas operan con dos operandos (dst/fte , fte).Indicar la cantidad de accesos a memoria realizados.
-	
-	\item Asumiendo una arquitectura tipo INTEL con operaciones 1--dirección más registros, sin limitaciones en cuando a los registros disponibles, que en lugar de load y store cuenta con la instrucción \texttt{mov} para acceder a memoria y donde las operaciones aritméticas operan con tres operandos (dst, fte, fte). Indicar la cantidad de accesos a memoria requeridos.
-
-	
-	%\item Determinar el número de accesos a memoria requeridos en cada una de las secuencias de instrucciones propuestas. En general ¿qué se puede decir respeto a la relación accesos a memoria vs. utilización de registros auxiliares?
-	
+	\item Una arquitectura de \textbf{1--dirección + registro} (tipo INTEL), con la instrucción \texttt{mov}. Indicar la cantidad de accesos a memoria requeridos.	
 \end{enumerate}
-
-
-%Lo podriamos dejar para el recu
-%Considerando una representación en punto flotante donde la mantisa está codificada con 12 bits en signo magnitud, el exponente con 4 bits en exceso, y la base utilizada es 2, realizar las siguientes operaciones aritméticas, normalizando el resultado obtenido e indicando claramente qué hace en cada paso y la existencia o no de \textit{underflow} y/o \textit{overflow}: \\ [2mm]
-%\begin{minipage}{0.5\textwidth}
-%	\centering a) $(-28.50) + 57.17$ 
-%\end{minipage}    
-%\begin{minipage}   {0.3\textwidth}	               
-%	\centering b) $12.62 \times 7.5$
-%\end{minipage}
-
 
 \PEjercicio{2} En el marco de la norma IEEE 754, considerando la representación en punto flotante de media precisión: mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:
 \begin{center}
@@ -54,32 +28,11 @@ Las etiquetas denotan las \textit{direcciones de memoria} que contienen los valo
 
 Dados los números $X = (1\; 10110\; 0011111001)$ e $Y = (0\; 00111\; 1000111100)$, realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pares y hacia $+\infty$, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits G, R y S del resultado y con R y S al redondear. El resultado debe ser expresando según la representación enunciada.
 
-%\ begin{verbatim}
-% exponente X = 10010 - 1111 = 11
-% exponente Y = 10101 - 1111 = 110
-%
-%          1.1101001010 x 2^3
-% x        1.0010110110 x 2^6
-% ------------------------
-% 10.001001010|11010011100 x 2^9
-%              GR----S=1
-%
-% Normalizar - No entra G
-% 1.0001001010|11010011100 x 2^10
-%              R----S=1
-%\end{verbatim}
-
 \PEjercicio{3} En el marco de la norma IEEE 754, considerando una representación simplificada de números en punto flotante con mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:\begin{center}
 	\begin{tabular}{|c|c|c|} \hline Sig (1b) & Exponente (5b) & Mantisa (10b) \\\hline\end{tabular}
 \end{center}
-Dados los números:
-\begin{center}
-	$X = (0 \ 01101 \ 0010110101) \qquad Y = (0 \ 01110 \ 1101000110)$
-\end{center}
 
-Realizar la suma $X + Y$ aplicando redondeo por \textit{proximidad unbiased (hacia los pares)}, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits G, R y S del resultado y con R y S al redondear. \textbf{El resultado debe ser expresando según la representación enunciada.}
-
-
+Dados los números $X = (0 \ 01101 \ 0010110101)$ e $Y = (0 \ 01110 \ 1101000110)$, realizar la suma $X + Y$ aplicando redondeo por \textit{proximidad unbiased (hacia los pares)}, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits G, R y S del resultado y con R y S al redondear. El resultado debe ser expresando según la representación enunciada.
 
 \PEjercicio{4} Determinar cuál es el contenido final de cada uno de los registros y posiciones de memoria involucrados en la siguiente secuencia de instrucciones. Indicar en cada caso, el número de instrucción que origina cada cambio. Asumir que el primer operando es el destino y el segundo la fuente de información para la operación.
 \begin{center}
@@ -125,11 +78,11 @@ Realizar la suma $X + Y$ aplicando redondeo por \textit{proximidad unbiased (hac
 			      JG R5, lbl2
 			lbl1: ADD R3, R3, R2
 			      DEC R1
-			      JZ R1, lbl3
+			      JG R1, lbl1
 			      JMP R4
 			lbl2: ADD R3, R3, R1
 			      DEC R2
-			      JZ R2, lbl2
+			      JG R2, lbl2
 			lbl3: STORE R3, 0(R0)
 			      HLT
 		\end{verbatim}
@@ -171,14 +124,14 @@ Realizar la suma $X + Y$ aplicando redondeo por \textit{proximidad unbiased (hac
 		\end{tabular}
 	\end{center}		
 \end{small}
-
+\begin{small}
 \begin{enumerate}[a)]
 	\item Ensamblar el programa a partir de la dirección 00h. \label{ensamblado}
 	\item Si se reubicara el código máquina obtenido en el inciso (\ref{ensamblado}) a partir de la dirección 20h, ¿qué referencias a memoria requieren ser ajustadas? Justificar adecuadamente.
 	\item Suponiendo que los valores ingresados por teclado son 1Ah y 04h, realice una traza mostrando la evolución del contenido de cada registro, para luego, describir el propósito del programa en su conjunto.
 	\item ¿Qué sucede con el resultado retornado si los valores ingresados fueran 04h y 1Ah? ¿Cuál es la diferencia? ¿Existe alguna restricción para los datos de entrada en cuanto al correcto funcionamiento del programa?
 \end{enumerate}
-
+\end{small}
 \end{document}
 
 
