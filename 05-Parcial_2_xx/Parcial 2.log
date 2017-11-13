@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.10)  8 NOV 2017 08:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.9.10)  8 NOV 2017 08:17
 entering extended mode
-**./P1.tex
-(P1.tex
+**"./Parcial 2.tex"
+("Parcial 2.tex"
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -503,41 +503,99 @@ Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
-)) (P1.aux
+))
+\c@ctej=\count103
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\vwcol\vwcol.sty"
+Package: vwcol 2008/06/24 v0.1 Variable-width multicolumn text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count104
+\calc@Bcount=\count105
+\calc@Adimen=\dimen116
+\calc@Bdimen=\dimen117
+\calc@Askip=\skip57
+\calc@Bskip=\skip58
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count106
+\calc@Cskip=\skip59
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\environ\environ.sty"
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\trimspaces\trimspaces.sty"
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\ragged2e.sty"
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everysel.sty"
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip60
+\RaggedLeftLeftskip=\skip61
+\RaggedRightLeftskip=\skip62
+\CenteringRightskip=\skip63
+\RaggedLeftRightskip=\skip64
+\RaggedRightRightskip=\skip65
+\CenteringParfillskip=\skip66
+\RaggedLeftParfillskip=\skip67
+\RaggedRightParfillskip=\skip68
+\JustifyingParfillskip=\skip69
+\CenteringParindent=\skip70
+\RaggedLeftParindent=\skip71
+\RaggedRightParindent=\skip72
+\JustifyingParindent=\skip73
+)
+\vwcol@sep=\skip74
+\vwcol@rule=\skip75
+\vwcol@totalwidth=\skip76
+\vwcol@averagewidth=\skip77
+\vwcol@parindent=\skip78
+\vwcol@last=\count107
+\vwcol@Ncols=\count108
+\vwcol@Nlines=\count109
+\vwcol@maxrecursion=\count110
+\vwcol@box=\box28
+\vwcol@plainbox=\box29
+\vwcol@outputbox=\box30
+) ("Parcial 2.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 )
-\openout1 = `P1.aux'.
+\openout1 = `"Parcial 2.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Info: Redefining \. on input line 30.
+LaTeX Info: Redefining \% on input line 30.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen116
-\scratchbox=\box28
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\scratchcounter=\count111
+\scratchdimen=\dimen118
+\scratchbox=\box31
+\nofMPsegments=\count112
+\nofMParguments=\count113
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen117
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen119
+\MPnumerator=\count115
+\makeMPintoPDFobject=\count116
 \everyMPtoPDFconversion=\toks25
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
@@ -584,7 +642,9 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 10.
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 30.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 32.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -597,7 +657,7 @@ Package epstopdf Info: Source file: <estilo/DeptoLogo.eps>
 (epstopdf)                    size: 6804 bytes
 (epstopdf)             Command: <epstopdf --outfile=estilo/DeptoLogo-eps-conver
 ted-to.pdf estilo/DeptoLogo.eps>
-(epstopdf)             \includegraphics on input line 10.
+(epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
 
 <estilo/DeptoLogo-eps-converted-to.pdf, id=1, 648.4225pt x 695.59875pt>
@@ -605,7 +665,7 @@ File: estilo/DeptoLogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use estilo/DeptoLogo-eps-converted-to.pdf>
 Package pdftex.def Info: estilo/DeptoLogo-eps-converted-to.pdf used on input li
-ne 10.
+ne 32.
 (pdftex.def)             Requested size: 56.3705pt x 60.46777pt.
 Package epstopdf Info: Source file: <estilo/UniLogo.eps>
 (epstopdf)                    date: 2017-09-13 18:27:21
@@ -615,7 +675,7 @@ Package epstopdf Info: Source file: <estilo/UniLogo.eps>
 (epstopdf)                    size: 11050 bytes
 (epstopdf)             Command: <epstopdf --outfile=estilo/UniLogo-eps-converte
 d-to.pdf estilo/UniLogo.eps>
-(epstopdf)             \includegraphics on input line 10.
+(epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
 
 <estilo/UniLogo-eps-converted-to.pdf, id=2, 732.7375pt x 705.63625pt>
@@ -623,62 +683,85 @@ File: estilo/UniLogo-eps-converted-to.pdf Graphic file (type pdf)
 
 <use estilo/UniLogo-eps-converted-to.pdf>
 Package pdftex.def Info: estilo/UniLogo-eps-converted-to.pdf used on input line
- 10.
+ 32.
 (pdftex.def)             Requested size: 63.59795pt x 61.24342pt.
 
-Overfull \hbox (14.32185pt too wide) in paragraph at lines 10--10
+Overfull \hbox (14.32185pt too wide) in paragraph at lines 32--32
  [][] 
  []
 
-[1
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 113.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+ [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./estilo/DeptoLogo-eps-co
-nverted-to.pdf> <./estilo/UniLogo-eps-converted-to.pdf>]
-Overfull \hbox (6.2826pt too wide) in paragraph at lines 57--58
-[]\OT1/cmr/m/n/12 Un pro-ce-di-mien-to \OT1/cmtt/m/n/12 void insertar(tABB a, t
-Elemento e, int (*f)(void *,void *))\OT1/cmr/m/n/12 ,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
+nverted-to.pdf> <./estilo/UniLogo-eps-converted-to.pdf>] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
-<estilo/Ejercicio_5.pdf, id=23, 1023.825pt x 406.51875pt>
-File: estilo/Ejercicio_5.pdf Graphic file (type pdf)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 150.
 
-<use estilo/Ejercicio_5.pdf>
-Package pdftex.def Info: estilo/Ejercicio_5.pdf used on input line 62.
-(pdftex.def)             Requested size: 483.69684pt x 192.0563pt.
- [2 <./estilo/Ejercicio_5.pdf>] (P1.aux
+Overfull \hbox (24.09764pt too wide) in paragraph at lines 199--206
+ [][] 
+ []
+
+
+Overfull \hbox (6.7385pt too wide) in paragraph at lines 251--251
+[]\OT1/cmtt/m/n/10.95 if (RA <= 5) R3++;[] 
+ []
+
+
+Overfull \hbox (34.29036pt too wide) in paragraph at lines 273--273
+[]\OT1/cmtt/m/n/10.95 for (RA = 0; RA < 10; RA++)[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--283
+
+ []
+
+[3] [4] ("Parcial 2.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 3987 strings out of 493323
- 50214 string characters out of 3139057
- 132627 words of memory out of 3000000
- 7439 multiletter control sequences out of 15000+200000
- 9259 words of font info for 36 fonts, out of 3000000 for 9000
+ 4300 strings out of 493323
+ 55560 string characters out of 3139057
+ 146474 words of memory out of 3000000
+ 7725 multiletter control sequences out of 15000+200000
+ 11280 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,43p,412b,365s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on P1.pdf (2 pages, 207156 bytes).
+ 39i,16n,43p,398b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "Parcial 2.pdf" (4 pages, 189729 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
+ 79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
