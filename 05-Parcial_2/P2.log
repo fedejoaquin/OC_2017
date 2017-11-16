@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  15 NOV 2017 18:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.17)  16 NOV 2017 09:54
 entering extended mode
 **./P2.tex
 (P2.tex
@@ -626,21 +626,21 @@ Overfull \hbox (14.32185pt too wide) in paragraph at lines 10--10
  [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--59
-[]\OT1/cmr/m/n/12 Interpretacion
- []
-
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./estilo/DeptoLogo-eps-co
 nverted-to.pdf> <./estilo/UniLogo-eps-converted-to.pdf>]
-Overfull \hbox (18.01852pt too wide) in paragraph at lines 87--106
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
+[]\OT1/cmr/m/n/12 Interpretacion
+ []
+
+
+Overfull \hbox (18.01852pt too wide) in paragraph at lines 91--110
 [][] 
  []
 
 
-Overfull \hbox (2.43332pt too wide) in paragraph at lines 62--107
+Overfull \hbox (2.43332pt too wide) in paragraph at lines 66--111
 []$ $[]$ 
  []
 
@@ -651,13 +651,13 @@ LaTeX Info: Redefining \. on input line 10.
 LaTeX Info: Redefining \% on input line 10.
 ) ) 
 Here is how much of TeX's memory you used:
- 3959 strings out of 493333
- 49838 string characters out of 3139185
+ 3962 strings out of 493333
+ 49874 string characters out of 3139185
  137973 words of memory out of 3000000
- 7401 multiletter control sequences out of 15000+200000
+ 7404 multiletter control sequences out of 15000+200000
  11119 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,16n,43p,564b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,16n,43p,734b,384s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/Mi
@@ -670,7 +670,7 @@ c/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on P2.pdf (2 pages, 182449 bytes).
+Output written on P2.pdf (2 pages, 183113 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
