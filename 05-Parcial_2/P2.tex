@@ -19,7 +19,7 @@ Implementar la siguiente expresión aritmética $B = (A \times (D + C))  + (A \t
 	\item Una arquitectura de \textbf{1--dirección + registro} (tipo Intel), sin restricción en la cantidad de registros y con la instrucción \texttt{mov}. Indicar la cantidad de accesos a memoria requeridos.	
 \end{enumerate}
 
-\PEjercicio{2} En el marco de la norma \textbf{IEEE 754}, considerando la representación en punto flotante de media precisión: mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:
+\PEjercicio{2} En el marco de la norma \textbf{IEEE 754}, considerando la representación en punto flotante simplificada: mantisa fraccionaria en signo magnitud con hidden bit, exponente en exceso y base 2 y la siguiente distribución de bits:
 \begin{center}
 	\begin{tabular}{|c|c|c|}\hline
 		Sig (1bit) & Exponente (8 bits) & Mantisa (10 bits)\\\hline
@@ -28,11 +28,11 @@ Implementar la siguiente expresión aritmética $B = (A \times (D + C))  + (A \t
 
 Dados los números $X = (1\; 10000100\; 0011111001)$ e $Y = (0\; 01110101 \; 1000111100)$ realizar el producto $X \times Y$ aplicando redondeo por proximidad hacia los pares y hacia $+\infty$, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits \textbf{G}, \textbf{R} y \textbf{S} del resultado y con \textbf{R} y \textbf{S} al redondear. El resultado debe ser expresando según la representación enunciada. Finalmente, convierta el número hallado a decimal e indique el error existente entre este valor y el obtenido al operar la multiplicación directamente sobre $X$ e $Y$ en decimal.
 
-\textit{(Pista: $X=-39,78125$ e $Y= 0.0015220642090$)}.
+\textit{(Pista: $X=-39,78125$, $Y= 0.0015220642$, $X \times Y = -0.0605496164$)}.
 
 \PEjercicio{3} Considerando la representación en punto flotante propuesta para el ejercicio anterior, y los números $X = (0 \ 01111100 \ 0010110101)$ e $Y = (1 \ 01111101 \ 1101000110)$, realizar la suma $X + Y$ aplicando redondeo por \textit{proximidad unbiased (hacia los pares)}, explicando cada uno de los pasos involucrados e indicando claramente qué se hace con los bits \textbf{G}, \textbf{R} y \textbf{S} del resultado y con \textbf{R} y \textbf{S} al redondear. El resultado debe ser expresando según la representación enunciada. Finalmente, convierta el número hallado a decimal e indique el error existente entre este valor y el obtenido al operar la suma directamente sobre $X$ e $Y$ en decimal. 
 
-\textit{(Pista: $X=0,147094727$ e $Y=0,454589844$)}.
+\textit{(Pista: $X=0,1470947265$, $Y=-0,4545898443$, $X+Y =-0,3074951178$)}.
 
 \PEjercicio{4} Determinar cuál es el contenido final de cada uno de los registros y posiciones de memoria involucrados en la siguiente secuencia de instrucciones. Indicar en cada caso, el número de instrucción que origina cada cambio. Asumir que el primer operando es el destino y el segundo la fuente de información para la operación.
 \begin{center}
