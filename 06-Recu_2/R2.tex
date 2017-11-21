@@ -1,0 +1,140 @@
+% ORGANIZACIÓN DE COMPUTADORAS
+% SEGUNDO CUATRIMESTRE 2017
+% RECUPERATORIO SEGUNDO EXAMEN PARCIAL
+
+\documentclass[12pt,a4paper]{article}
+\input{estilo/Catedras.sty}
+
+\begin{document}
+
+\Examen{Recuperatorio Segundo Examen Parcial}
+
+\PEjercicio{1} Hacer.
+
+\PEjercicio{2} Hacer.
+
+\PEjercicio{3} Hacer.
+
+\newpage
+
+\PEjercicio{4} Dados los valores indicados tanto para el banco de registros como para las etiquetas de memoria, indicar para cada modo de direccionamiento, el registro \texttt{R} y/o el número hexadecimal \texttt{xxxx} necesarios para mover el operando \texttt{100h} al registro \texttt{R6}. Luego, indicar en cada paso cuántos accesos a memoria se realizan por la instrucción.
+\begin{center}
+	\begin{minipage}{0.17\textwidth}
+		\begin{tabular}{|c|c|} \hline
+			Reg. & Cont. \\\hline
+			R1 & 100h \\\hline
+			R2 & 200h \\\hline
+			R3 & 300h \\\hline
+			R4 & 400h \\\hline
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.17\textwidth}
+		\begin{tabular}{|c|c|} \hline
+			Dir. & Cont. \\\hline
+			100h & 500h \\\hline
+			200h & 400h \\\hline
+			400h & 100h \\\hline
+			600h & 400h \\\hline
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		\begin{enumerate}[(1)]
+			\itemsep -5pt
+			\item mov R6,\#xxxx
+			\item mov R6, R
+			\item mov R6, (R)
+			\item mov R6, xxxx
+			\item mov R6, (xxxx)
+			\item mov R6, (R2)xxxx
+			\item mov R6, @300(R)
+		\end{enumerate}
+	\end{minipage}
+	\begin{minipage}{0.3\textwidth}
+		Interpretación
+		\begin{tabular}{ll}
+			\#xxxx   & Inmediato\\
+			R       & Registro \\
+			(R)     & Registro indirecto\\
+			xxxx    & Absoluto \\
+			(xxxx)  & Memoria indirecto\\
+			(R)xxxx & Base \\
+			@xxxx(R) & Pre-indexado indirecto
+		\end{tabular}
+	\end{minipage}
+\end{center}
+
+\PEjercicio{5} Considerando el programa A para la arquitectura OCUNS, en la que toda lectura/escritura sobre la dirección FF es redireccionada a la E/S estándar, y los pseudocódigos 1 y 2 indicados a continuación: \\ [2.5mm]
+\begin{small}
+	\begin{minipage}{.4\textwidth}
+		\begin{verbatim}
+		Programa A:
+			      LDA R0, FFh
+			      LOAD R1, 0(R0)
+			      ADD R2, RF, RF
+			      JZ R1, lbl2
+			lbl1: ADD R2, R2, R1
+			      DEC R1
+			      JG R1, lbl1
+			lbl2: STORE R2, 0(R0)
+			      HLT
+		\end{verbatim}
+		\begin{verbatim}
+		Pseudocódigo 1
+		    if (R1 <= 4) R2++;
+		    else R2--;
+		\end{verbatim}
+		\begin{verbatim}
+		Pseudocódigo 2
+		    R3 = 0;
+		    for (R4 = 0; R4 < 10; R4++)
+		        R3 += R4;
+		\end{verbatim}
+	\end{minipage}
+	\begin{minipage}{.6\textwidth}	
+		\begin{tabular}{|c|l|c|l|}\hline
+			\textsc{Op.} & \textsc{Descr.} & \textsc{Form.} & \textsc{Pseudocódigo} \\ \hline
+			\textbf{0} & \textsf{add} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] + R[t]} \\
+			\textbf{1} & \textsf{sub} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] - R[t]} \\
+			\textbf{2} & \textsf{and} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] \& R[t]} \\
+			\textbf{3} & \textsf{xor} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] \^{} R[t]} \\
+			\textbf{4} & \textsf{lsh} & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] <{}<{} R[t]} \\
+			\textbf{5} & \textsf{rsh}  & \textbf{I} & \texttt{R[d] $\leftarrow$ R[s] >{}>{} R[t]} \\
+			\textbf{6} & \textsf{load}  & \textbf{I} & \texttt{R[d] $\leftarrow$ mem[offset + R[s]]} \\
+			\textbf{7} & \textsf{store} & \textbf{I} & \texttt{mem[offset + R[d]] $\leftarrow$ R[s]} \\
+			\textbf{8} & \textsf{lda}   & \textbf{II} & \texttt{R[d] $\leftarrow$ addr} \\
+			\textbf{9} & \textsf{jz}    & \textbf{II} & \texttt{if (R[d] == 0) PC $\leftarrow$ PC + addr} \\
+			\textbf{A} & \textsf{jg}    & \textbf{II} & \texttt{if (R[d] >{} 0) PC $\leftarrow$ PC + addr} \\
+			\textbf{B} & \textsf{call}  & \textbf{II} & \texttt{R[d] $\leftarrow$ PC; PC $\leftarrow$ addr} \\
+			\textbf{C} & \textsf{jmp}   & \textbf{III} & \texttt{PC $\leftarrow$ R[d]} \\
+			\textbf{D} & \textsf{inc}   & \textbf{III} & \texttt{R[d] $\leftarrow$ R[d] + 1} \\
+			\textbf{E} & \textsf{dec}   & \textbf{III} & \texttt{R[d] $\leftarrow$ R[d] - 1} \\
+			\textbf{F} & \textsf{hlt}   & \textbf{III} & \texttt{exit} \\ \hline
+		\end{tabular}	
+	\end{minipage}
+	\begin{center}
+		\begin{tabular}{*{17}{c}}
+			\textsf{FORMATO} & 15 & 14 & 13 & 12 & 11 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3 & 2 & 1 & 0 \\ \hline
+			\multicolumn{1}{|c|}{\textbf{I}} & 0 & $\times$ & $\times$ & $\times$ &
+			\multicolumn{4}{|c|}{\textsf{dest. d}} &
+			\multicolumn{4}{|c|}{\textsf{src. s}} &
+			\multicolumn{4}{|c|}{\textsf{src. t / off.}} \\ \hline
+			\multicolumn{1}{|c|}{\textbf{II}} & 1 & 0 & $\times$ & $\times$ &
+			\multicolumn{4}{|c|}{\textsf{dest. d}} &
+			\multicolumn{8}{|c|}{\textsf{address addr}} \\ \hline
+			\multicolumn{1}{|c|}{\textbf{III}} & 1 & 1 & $\times$ & $\times$ &
+			\multicolumn{4}{|c|}{\textsf{dest. d}} &
+			\multicolumn{8}{|c|}{\textsf{-}} \\ \hline
+		\end{tabular}
+	\end{center}		
+\end{small}
+\begin{small}
+\begin{enumerate}[a)]
+	\item Ensamblar el programa A a partir de la dirección 00h.
+	\item Suponiendo que se ingresa por teclado el valor 04h, realice una traza del programa A mostrando la evolución del contenido de cada registro y del PC (paso a paso), y luego describa el propósito del programa en su conjunto.
+	\item Indique una secuencia de instrucciones para la arquitectura OCUNS, que sea equivalente al pseudocódigo 1.
+	\item Indique una secuencia de instrucciones para la arquitectura OCUNS, que sea equivalente al pseudocódigo 2.	
+\end{enumerate}
+\end{small}
+\end{document}
+
+
